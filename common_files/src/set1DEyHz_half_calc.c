@@ -28,6 +28,9 @@ const double * const *set1DEyHz_half_calc(
 
 ) {
 
+    // ey=coef1*ey+coef2*(hz-hz)+coef3*J
+    // hz=coef4*hz+coef5*(ey-ey)
+
     double *sigma,*eps,*eps_hz;
     double *coef1,*coef2,*coef3,*coef4,*coef5;
 

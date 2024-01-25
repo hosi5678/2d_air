@@ -32,13 +32,13 @@
 #define n_glass 1.55
 
 // for test
-// #define reflactive_layer_half_side 5
-// #define air_layer_half_side 3
-// #define pml_layer_half_side 5
+#define reflactive_layer_half_side 5
+#define air_layer_half_side 3
+#define pml_layer_half_side 5
 
-#define reflactive_layer_half_side 60
-#define air_layer_half_side 60
-#define pml_layer_half_side 35
+// #define reflactive_layer_half_side 60
+// #define air_layer_half_side 60
+// #define pml_layer_half_side 35
 
 #define cu_sigma 64.5e6
 

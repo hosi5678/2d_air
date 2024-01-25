@@ -37,32 +37,27 @@ int main(void) {
 
     char *file_name;
 
-    int *xy_cells;
-    xy_cells=checkAlloc1DInt("in main xy cells.",dimension);
-    xy_cells[0]=xcells;
-    xy_cells[1]=ycells;
+    int x_length,y_length;
+    x_length=1+2*(reflactive_layer_half_side+air_layer_half_side+pml_layer_half_side);
+    y_length=1+2*(reflactive_layer_half_side+air_layer_half_side+pml_layer_half_side);
 
-    int *excite_point;
-    excite_point=checkAlloc1DInt("in main excite point.",dimension);
-    excite_point[0]=(xcells-1)/2;
-    excite_point[1]=(ycells-1)/2;
+    int excite_point_x,excite_point_y;
+    excite_point_x=(x_length-1)/2;
+    excite_point_y=(y_length-1)/2;
 
     double *ez_range;
     ez_range=checkAlloc1DDouble("in main ez range.",2);
 
-    int fft_timestep_start=2*gaussianPeaktimePosition+excite_point[0];
+    int fft_timestep_start=2*gaussianPeaktimePosition+excite_point_x;
     int fft_timestep_end=fft_timestep_start+fft_length;
 
     int calculation_timestep=fft_timestep_end;
 
-    printf("(main) x_cells=%d\n",xy_cells[0]);
-    printf("(main) y_cells=%d\n",xy_cells[1]);
-
     printf("(main) fft length=%d\n",fft_length);
     printf("(main) calc timestep=%d\n",calculation_timestep);
     printf("(main) gaussian peak=%d\n",gaussianPeaktimePosition);
-    printf("(main) excite point_x=%d\n",excite_point[0]);
-    printf("(main) excite point_y=%d\n",excite_point[1]);
+    printf("(main) excite point_x=%d\n",excite_point_x);
+    printf("(main) excite point_y=%d\n",excite_point_y);
 
     // gaussian wave setting
     exciteWave=setGaussianWave(calculation_timestep);
@@ -75,10 +70,12 @@ int main(void) {
 
     // 1 dimensional fdtd calculation
     ety_const_2d_plane=set2DEzHxHy_calc_half(
-       xy_cells,
+       x_length,
+       y_length,
        calculation_timestep,
        exciteWave,
-       excite_point,
+       excite_point_x,
+       excite_point_y,
        ez_range
     );
 
