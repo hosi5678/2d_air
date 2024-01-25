@@ -1,3 +1,0 @@
-/home/user/programming/fdtd/projects/fdtd1d_gaussian/build/CMakeFiles/fdtd1d_gaussian.dir
-/home/user/programming/fdtd/projects/fdtd1d_gaussian/build/CMakeFiles/edit_cache.dir
-/home/user/programming/fdtd/projects/fdtd1d_gaussian/build/CMakeFiles/rebuild_cache.dir

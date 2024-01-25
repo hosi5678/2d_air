@@ -10,14 +10,17 @@
 #define light_speed 2.99792458e8
 // #define light_speed 3.0e8
 
-#define dimension 1
+#define dimension 2
 
-#define dx 25e-9 // 25e-9
-#define time_margin 1.0
+#define xcells 61
+#define ycells 61
+
+#define dx 20e-9 // 25e-9
+#define time_margin 0.98
 
 #define fft_length 16384
 
-#define gaussianPeaktimePosition 16
+#define gaussianPeaktimePosition 32
 
 #define gaussian_alpha 0.05
 

@@ -24,14 +24,14 @@ set(angular_frequency_num "175" CACHE INTERNAL "angular frequency number")
 # excitation_mode に応じてサブディレクトリと実行ファイルを追加
 # gaussianの場合
 if(excitation_mode STREQUAL "gaussian")
-    add_subdirectory(./fdtd1d_gaussian)
-    add_executable(main main_1d_gaussian.c)
+    add_subdirectory(./fdtd2d_gaussian)
+    add_executable(main main_2d_gaussian.c)
     target_link_libraries(main fdtd1d_lib_gaussian)
 
 #sinの場合
 elseif(excitation_mode STREQUAL "sin")
-    add_subdirectory(./fdtd1d_sinwave)
-    add_executable(main main_1d_sinwave.c )
+    add_subdirectory(./fdtd2d_sinwave)
+    add_executable(main main_2d_sinwave.c )
     target_link_libraries(main fdtd1d_lib_sinwave)
 
 # errorを出力

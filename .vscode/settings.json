@@ -6,7 +6,8 @@
         "dft.h": "c",
         "checkalloc1ddouble.h": "c",
         "setcoef2.h": "c",
-        "fft.h": "c"
+        "fft.h": "c",
+        "set1deyhz_half_calc.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cmake.cpptools.compilerPath": "/usr/bin/gcc",

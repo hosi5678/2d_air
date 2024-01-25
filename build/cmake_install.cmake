@@ -1,4 +1,4 @@
-# Install script for directory: /home/user/1d_ref
+# Install script for directory: /home/user/project/2d_air
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/user/1d_ref/build/fdtd1d_gaussian/cmake_install.cmake")
-  include("/home/user/1d_ref/build/common_files/cmake_install.cmake")
+  include("/home/user/project/2d_air/build/fdtd2d_gaussian/cmake_install.cmake")
+  include("/home/user/project/2d_air/build/common_files/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/user/1d_ref/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/user/project/2d_air/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
