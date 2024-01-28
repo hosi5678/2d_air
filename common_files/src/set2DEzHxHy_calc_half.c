@@ -17,6 +17,7 @@
 #include "../include/setCoef5.h"
 #include "../include/getFilePath.h"
 #include "../include/set1DDoubleCSV_Column.h"
+#include "../include/put_square.h"
 
 #include "../include/set2DEzHxHy_calc_half.h"
 
@@ -30,11 +31,18 @@ const double * const *set2DEzHxHy_calc_half(
     double *ez_range
 ){
 
-    double *sigma,*eps;
-    double **ez;
+    double *eps;
+    double sigma;
+    double **ez,**hx,**hy;
+
+    ez=init2DdoublePlane("in ez",y_length,x_length);
+    hx=init2DdoublePlane("in hx",y_length,x_length-1);
+    hy=init2DdoublePlane("in hy",y_length-1,x_length);
 
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
+
+    sigma=0.0;
 
     //  ez_x=coef1(x)*ez_x+coef2(x)*(hy-hy)
     //  ez_y=coef1(y)*ez_y+coef2(y)*(hx-hx)
@@ -44,16 +52,37 @@ const double * const *set2DEzHxHy_calc_half(
 
     //  sigma_x_for_ez,sigma_y_for_ez,sigma_x_for_hxy,sigma_y_for_hxy
 
-    const double *sigma_x_for_ez;
-    const double *sigma_y_for_ez;
-    const double *sigma_x_for_hxy;
-    const double *sigma_y_for_hxy;
+    // const double *sigma_x_for_ez;
+    // const double *sigma_y_for_ez;
+    // const double *sigma_x_for_hxy;
+    // const double *sigma_y_for_hxy;
 
-    sigma_x_for_ez=setSigma_for_Ez(x_length,cu_sigma);
-    sigma_y_for_ez=setSigma_for_Ez(y_length,cu_sigma);
 
-    sigma_x_for_hxy=setSigma_for_Hxy(x_length-1,cu_sigma);
-    sigma_y_for_hxy=setSigma_for_Hxy(y_length-1,cu_sigma);
+    // n_x_for_ez=set_n_for_ez(n_ref_x_length,excite_point_x,n_ref);
+    // n_y_for_ez=set_n_for_ez(n_ref_y_length,excite_point_y,n_ref);
+    // n_x_for_hxy=set_n_for_hxy(n_ref_x_length,n_ref);
+    // n_y_for_hxy=set_n_for_hxy(n_ref_y_length,n_ref);
+
+    // int n_ref_x_length,n_ref_y_length;
+    // double n_ref_value;
+
+    // n_ref_value=0.0;
+
+    // put_square(
+    //     n_ref_plane,
+    //     excite_point_x,
+    //     excite_point_y,
+    //     n_ref_x_length,
+    //     n_ref_y_length,
+    //     n_ref_value
+    // );
+
+    // sigma_x_for_ez=setSigma_for_Ez(x_length,sigma);
+    // sigma_y_for_ez=setSigma_for_Ez(y_length,sigma);
+
+    // sigma_x_for_hxy=setSigma_for_Hxy(x_length-1,sigma);
+    // sigma_y_for_hxy=setSigma_for_Hxy(y_length-1,sigma);
+
 
     return (const double * const *)ez;
 }

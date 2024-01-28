@@ -49,7 +49,7 @@ const double * const *set1DEyHz(
 
     double **ety_2d_plane;
 
-    ety_2d_plane=init2DdoublePlane(time_length,x_length);
+    ety_2d_plane=init2DdoublePlane("in set1DEyHz.",time_length,x_length);
 
         for (int time=0; time < time_length; time++) {
 
