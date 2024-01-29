@@ -11,16 +11,16 @@
 #include "../include/getFilePath.h"
 #include "../include/set1DDoubleCSV_Column.h"
 
-#include "../include/setSigma_for_Hxy.h"
+#include "../include/setSigma_for_Hx.h"
 
-const double *setSigma_for_Hxy(int x_length,double pml_sigma){
+const double *setSigma_for_Hx(int x_length, double pml_sigma){
 
     double *sigma;
 
     sigma=checkAlloc1DDouble("sigma",x_length);
 
     for(int x=0;x<pml_layer_half_side;x++){
-        sigma[x]=pml_sigma*pow((1.0-((double)x+0.5)/pml_layer_half_side),4.0);
+        sigma[x]=pml_sigma*pow(1.0-((double)(x+1.0)/pml_layer_half_side),4.0);
     }
 
     for(int x=pml_layer_half_side;x<x_length;x++){
@@ -37,7 +37,6 @@ const double *setSigma_for_Hxy(int x_length,double pml_sigma){
         printf("sigma[%d]=%.15f\n",x,sigma[x]);
     }
 
-    return sigma;
-
+    return (const double*)sigma;
 
 }

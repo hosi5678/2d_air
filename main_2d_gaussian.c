@@ -38,8 +38,8 @@ int main(void) {
     char *file_name;
 
     int x_length,y_length;
-    x_length=1+2*(reflactive_layer_half_side+air_layer_half_side+pml_layer_half_side);
-    y_length=1+2*(reflactive_layer_half_side+air_layer_half_side+pml_layer_half_side);
+    x_length=1+2*(refractive_layer_half_side+air_layer_half_side+pml_layer_half_side);
+    y_length=1+2*(refractive_layer_half_side+air_layer_half_side+pml_layer_half_side);
 
     int excite_point_x,excite_point_y;
     excite_point_x=(x_length-1)/2;
@@ -53,7 +53,10 @@ int main(void) {
 
     int calculation_timestep=fft_timestep_end;
 
-    printf("(main) fft length=%d\n",fft_length);
+    printf("(main) x_length=%d\n",x_length);
+    printf("(main) y_length=%d\n",y_length);
+
+
     printf("(main) calc timestep=%d\n",calculation_timestep);
     printf("(main) gaussian peak=%d\n",gaussianPeaktimePosition);
     printf("(main) excite point_x=%d\n",excite_point_x);

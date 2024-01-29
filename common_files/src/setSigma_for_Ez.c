@@ -20,10 +20,10 @@ const double *setSigma_for_Ez(int x_length,double pml_sigma){
     sigma=checkAlloc1DDouble("sigma",x_length);
 
     for(int x=0;x<pml_layer_half_side;x++){
-        sigma[x]=pml_sigma*pow(((pml_layer_half_side-(double)x)/pml_layer_half_side),4.0);
+        sigma[x]=pml_sigma*pow((1.0-(double)x/pml_layer_half_side),4.0);
     }
 
-    for(int x=pml_layer_half_side;x<x_length;x++){
+    for(int x=x_length-pml_layer_half_side;x<x_length;x++){
         sigma[x]=sigma[x_length-1-x];
     }
 

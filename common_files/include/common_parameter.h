@@ -12,15 +12,15 @@
 
 #define dimension 2
 
-#define xcells 61
-#define ycells 61
+#define xcells 19
+#define ycells 19
 
 #define dx 20e-9 // 25e-9
 #define time_margin 0.98
 
-#define fft_length 16384
+#define fft_length 128
 
-#define gaussianPeaktimePosition 32
+#define gaussianPeaktimePosition 16
 
 #define gaussian_alpha 0.05
 
@@ -32,9 +32,10 @@
 #define n_glass 1.55
 
 // for test
-#define reflactive_layer_half_side 5
-#define air_layer_half_side 3
-#define pml_layer_half_side 5
+#define refractive_layer_half_side 2
+// #define refractive_layer_half_side_y 2
+#define air_layer_half_side 2
+#define pml_layer_half_side 6
 
 // #define reflactive_layer_half_side 60
 // #define air_layer_half_side 60

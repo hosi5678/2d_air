@@ -9,7 +9,8 @@
 #include "../include/checkAlloc1DDouble.h"
 #include "../include/setEps.h"
 #include "../include/setSigma_for_Ez.h"
-#include "../include/setSigma_for_Hxy.h"
+#include "../include/setSigma_for_Hx.h"
+#include "../include/setSigma_for_Hy.h"
 #include "../include/setCoef1.h"
 #include "../include/setCoef2.h"
 #include "../include/setCoef3.h"
@@ -31,21 +32,25 @@ const double * const *set2DEzHxHy_calc_half(
     double *ez_range
 ){
 
-    double *eps;
+    double **eps;
     double sigma;
+    double *sigma_for_ez;
+    double *sigma_for_hx,*sigma_for_hy;
     double **ez,**hx,**hy;
 
     ez=init2DdoublePlane("in ez",y_length,x_length);
-    hx=init2DdoublePlane("in hx",y_length,x_length-1);
-    hy=init2DdoublePlane("in hy",y_length-1,x_length);
+    hx=init2DdoublePlane("in hx",y_length-1,x_length-2);
+    hy=init2DdoublePlane("in hy",y_length-2,x_length-1);
 
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
 
     sigma=0.0;
+    setSigma_for_Ez(x_length,sigma);
+
 
     //  ez_x=coef1(x)*ez_x+coef2(x)*(hy-hy)
-    //  ez_y=coef1(y)*ez_y+coef2(y)*(hx-hx)
+    //  ez_y=coef1(y)*ez_y+coef2(y)*(hx-hx)-coef3*J
     //  ez=ez_x+ez_y
     //  hx=coef1(y)*hx+coef2(y)*(ez-ez)
     //  hy=coef1(x)*hy+coef2(x)*(ez-ez)
