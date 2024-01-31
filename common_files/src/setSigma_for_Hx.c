@@ -13,30 +13,30 @@
 
 #include "../include/setSigma_for_Hx.h"
 
-const double *setSigma_for_Hx(int x_length, double pml_sigma){
+const double *setSigma_for_Hx(int y_length, double pml_sigma){
 
     double *sigma;
 
-    sigma=checkAlloc1DDouble("sigma",x_length);
+    sigma=checkAlloc1DDouble("sigma",y_length);
 
-    for(int x=0;x<pml_layer_half_side;x++){
-        sigma[x]=pml_sigma*pow(1.0-((double)(x+1.0)/pml_layer_half_side),4.0);
+    for(int y=0;y<pml_layer_half_side;y++){
+        sigma[y]=pml_sigma*pow(1.0-((double)(y+0.5)/pml_layer_half_side),4.0);
     }
 
-    for(int x=pml_layer_half_side;x<x_length;x++){
-        sigma[x]=sigma[x_length-1-x];
+    for(int y=0;y<pml_layer_half_side;y++){
+        sigma[y_length-1-y]=sigma[y];
     }
 
     char *file_path;
 
-    file_path=getFilePath(csv_dir,"sigma_hxy",csv_extension);
+    file_path=getFilePath(csv_dir,"sigma_hy",csv_extension);
 
-    set1DDoubleCSV_Column(sigma,file_path,x_length);
+    set1DDoubleCSV_Column(sigma,file_path,y_length);
 
-    for (int x=0 ; x<x_length ; x++) {
-        printf("sigma[%d]=%.15f\n",x,sigma[x]);
-    }
+    // for (int y=0 ; y<y_length ; y++) {
+    //     printf("sigma_hx[%d]=%.15f\n",y,sigma[y]);
+    // }
 
-    return (const double*)sigma;
+    return (const double *)sigma;
 
 }

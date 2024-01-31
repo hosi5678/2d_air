@@ -29,13 +29,13 @@ const double *setSigma_for_Ez(int x_length,double pml_sigma){
 
     char *file_path;
 
-    file_path=getFilePath(csv_dir,"sigma",csv_extension);
+    file_path=getFilePath(csv_dir,"sigma_x",csv_extension);
 
     set1DDoubleCSV_Column(sigma,file_path,x_length);
 
-   //  for (int x=0 ; x<x_length ; x++) {
-   //      printf("sigma[%d]=%.15f\n",x,sigma[x]);
-   //  }
+    // for (int x=0 ; x<x_length ; x++) {
+    //     printf("sigma[%d]=%.15f\n",x,sigma[x]);
+    // }
 
     return sigma;
 

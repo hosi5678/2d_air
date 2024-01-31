@@ -32,14 +32,14 @@ int main(void) {
 
     start_clock = clock();
 
-    const double * const *ety_const_2d_plane;
+    // const double * const *ety_const_2d_plane;
     double *exciteWave;
 
-    char *file_name;
+    // char *file_name;
 
     int x_length,y_length;
     x_length=1+2*(refractive_layer_half_side+air_layer_half_side+pml_layer_half_side);
-    y_length=1+2*(refractive_layer_half_side+air_layer_half_side+pml_layer_half_side);
+    y_length=x_length;
 
     int excite_point_x,excite_point_y;
     excite_point_x=(x_length-1)/2;
@@ -72,7 +72,8 @@ int main(void) {
     ez_range[1]=ez_excitePoint_min;
 
     // 1 dimensional fdtd calculation
-    ety_const_2d_plane=set2DEzHxHy_calc_half(
+    // ety_const_2d_plane=
+    set2DEzHxHy_calc_half(
        x_length,
        y_length,
        calculation_timestep,

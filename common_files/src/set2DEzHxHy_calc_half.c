@@ -34,19 +34,27 @@ const double * const *set2DEzHxHy_calc_half(
 
     double **eps;
     double sigma;
-    double *sigma_for_ez;
-    double *sigma_for_hx,*sigma_for_hy;
+    const double *sigma_for_ezx,*sigma_for_ezy;    
+    const double *sigma_for_hx,*sigma_for_hy;
     double **ez,**hx,**hy;
 
     ez=init2DdoublePlane("in ez",y_length,x_length);
-    hx=init2DdoublePlane("in hx",y_length-1,x_length-2);
-    hy=init2DdoublePlane("in hy",y_length-2,x_length-1);
+    hx=init2DdoublePlane("in hx",y_length-1,x_length);
+    hy=init2DdoublePlane("in hy",y_length,x_length-1);
+
+    eps=init2DdoublePlane("in set 2D eps.",y_length,x_length);
 
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
 
-    sigma=0.0;
-    setSigma_for_Ez(x_length,sigma);
+    sigma=cu_sigma;
+
+    sigma_for_ezx=setSigma_for_Ez(x_length,sigma);
+    sigma_for_ezy=setSigma_for_Ez(y_length,sigma);
+    sigma_for_hx=setSigma_for_Hx(y_length,sigma);
+    sigma_for_hy=setSigma_for_Hy(x_length,sigma);
+
+
 
 
     //  ez_x=coef1(x)*ez_x+coef2(x)*(hy-hy)

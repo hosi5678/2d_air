@@ -35,7 +35,7 @@
 #define refractive_layer_half_side 2
 // #define refractive_layer_half_side_y 2
 #define air_layer_half_side 2
-#define pml_layer_half_side 6
+#define pml_layer_half_side 5
 
 // #define reflactive_layer_half_side 60
 // #define air_layer_half_side 60
