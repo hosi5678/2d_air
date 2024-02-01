@@ -18,6 +18,8 @@
 #include "../include/setCoef5.h"
 #include "../include/getFilePath.h"
 #include "../include/set1DDoubleCSV_Column.h"
+#include "../include/set2DRefractiveIndex.h"
+#include "../include/set2DDoubleCSV.h"
 #include "../include/put_square.h"
 
 #include "../include/set2DEzHxHy_calc_half.h"
@@ -33,10 +35,13 @@ const double * const *set2DEzHxHy_calc_half(
 ){
 
     double **eps;
-    double sigma;
+    double sigma,refractive_index;
     const double *sigma_for_ezx,*sigma_for_ezy;    
     const double *sigma_for_hx,*sigma_for_hy;
     double **ez,**hx,**hy;
+
+    sigma=cu_sigma;
+    refractive_index=n_glass;
 
     ez=init2DdoublePlane("in ez",y_length,x_length);
     hx=init2DdoublePlane("in hx",y_length-1,x_length);
@@ -47,14 +52,26 @@ const double * const *set2DEzHxHy_calc_half(
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
 
-    sigma=cu_sigma;
 
     sigma_for_ezx=setSigma_for_Ez(x_length,sigma);
     sigma_for_ezy=setSigma_for_Ez(y_length,sigma);
     sigma_for_hx=setSigma_for_Hx(y_length,sigma);
     sigma_for_hy=setSigma_for_Hy(x_length,sigma);
 
+    // writable double pointer
+    double **n_ref_plane;
 
+    n_ref_plane=set2DRefractiveIndex(y_length,x_length,n_air);
+
+
+    put_square(
+        n_ref_plane,
+        excite_point_x,
+        excite_point_y,
+        refractive_index
+    );
+
+    set2DDoubleCSV((const double **)n_ref_plane,"./csv_files/n_ref_plane.csv",y_length,x_length);
 
 
     //  ez_x=coef1(x)*ez_x+coef2(x)*(hy-hy)
