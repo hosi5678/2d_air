@@ -29,7 +29,7 @@ const double *setSigma_for_Hy(int x_length,double pml_sigma){
 
     char *file_path;
 
-    file_path=getFilePath(csv_dir,"sigma_hxy",csv_extension);
+    file_path=getFilePath(csv_dir,"sigma_hy",csv_extension);
 
     set1DDoubleCSV_Column(sigma,file_path,x_length);
 

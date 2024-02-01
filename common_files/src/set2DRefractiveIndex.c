@@ -26,5 +26,4 @@ double **set2DRefractiveIndex(
 
    return value;
 
-
 }

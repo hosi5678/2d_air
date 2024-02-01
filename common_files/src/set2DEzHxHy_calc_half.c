@@ -21,6 +21,7 @@
 #include "../include/set2DRefractiveIndex.h"
 #include "../include/set2DDoubleCSV.h"
 #include "../include/put_square.h"
+#include "../include/set2D_eps_for_ez.h"
 
 #include "../include/set2DEzHxHy_calc_half.h"
 
@@ -59,19 +60,33 @@ const double * const *set2DEzHxHy_calc_half(
     sigma_for_hy=setSigma_for_Hy(x_length,sigma);
 
     // writable double pointer
-    double **n_ref_plane;
+    double **n_plane_for_ez,**n_plane_for_hx,**n_plane_for_hy;
 
-    n_ref_plane=set2DRefractiveIndex(y_length,x_length,n_air);
+    n_plane_for_ez=set2DRefractiveIndex(y_length,x_length,n_air);
+    n_plane_for_hx=set2DRefractiveIndex(y_length-1,x_length,n_air);
+    n_plane_for_hy=set2DRefractiveIndex(y_length,x_length-1,n_air);
+
 
 
     put_square(
-        n_ref_plane,
+        n_plane_for_ez,
+        n_plane_for_hx,
+        n_plane_for_hy,
+        y_length,
+        x_length,
         excite_point_x,
         excite_point_y,
         refractive_index
     );
 
-    set2DDoubleCSV((const double **)n_ref_plane,"./csv_files/n_ref_plane.csv",y_length,x_length);
+    set2DDoubleCSV(
+        (const double * const *)n_plane_for_hx,
+        "n_ref_plane",
+        y_length-1,
+        x_length);
+
+    eps=set2D_eps_for_ez("nxn",n_plane_for_ez,y_length,x_length);
+
 
 
     //  ez_x=coef1(x)*ez_x+coef2(x)*(hy-hy)

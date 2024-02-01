@@ -6,10 +6,12 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#include "../include/common_parameter.h"
+#include "../include/getFilePath.h"
 #include "../include/set2DDoubleCSV.h"
 
 void set2DDoubleCSV(
-   const double **vec,
+   const double * const *vec,
    const char *src_file_name,
    int y_length,
    int x_length
@@ -22,14 +24,16 @@ void set2DDoubleCSV(
     option= O_CREAT | O_TRUNC | O_RDWR ;
     pmode= S_IRUSR | S_IWUSR | S_IROTH | S_IWOTH ;
 
-    int file_name_length;
+    char *file_path=getFilePath(csv_dir,src_file_name,csv_extension);
 
-    file_name_length = strlen(src_file_name);
+    int file_path_length=strlen(file_path);
 
     char *file_name;
-    file_name = (char *)calloc(file_name_length + 1, sizeof(char) );
+    file_name = (char *)calloc(file_path_length + 1, sizeof(char) );
 
-    strcpy(file_name, src_file_name);
+    strcpy(file_name, file_path);
+
+    printf("file_name=%s\n",file_name);
 
     fd=open(file_name, option, pmode);
 
