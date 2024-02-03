@@ -5,11 +5,10 @@
 #include "../include/common_parameter.h"
 #include "../include/getFilePath.h"
 #include "../include/set2DDoubleCSV.h"
-#include "../include/set2D_eps_for_ez.h"
+#include "../include/set2D_plane_eps.h"
 
-double **set2D_eps_for_ez(
+double **set2D_plane_eps(
    const char *src_file_name,
-   // const double * const *n,
    double **n,
    int y_length,
    int x_length

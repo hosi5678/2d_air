@@ -33,7 +33,7 @@ void set2DDoubleCSV(
 
     strcpy(file_name, file_path);
 
-    printf("file_name=%s\n",file_name);
+    printf("file_name=%s was created.\n",file_name);
 
     fd=open(file_name, option, pmode);
 

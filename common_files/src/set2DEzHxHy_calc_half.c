@@ -8,9 +8,9 @@
 #include "../include/antisymmetryCheck.h"
 #include "../include/checkAlloc1DDouble.h"
 #include "../include/setEps.h"
-#include "../include/setSigma_for_Ez.h"
-#include "../include/setSigma_for_Hx.h"
-#include "../include/setSigma_for_Hy.h"
+#include "../include/set2DSigma_for_Ez.h"
+#include "../include/set2DSigma_for_Hx.h"
+#include "../include/set2DSigma_for_Hy.h"
 #include "../include/setCoef1.h"
 #include "../include/setCoef2.h"
 #include "../include/setCoef3.h"
@@ -21,7 +21,7 @@
 #include "../include/set2DRefractiveIndex.h"
 #include "../include/set2DDoubleCSV.h"
 #include "../include/put_square.h"
-#include "../include/set2D_eps_for_ez.h"
+#include "../include/set2D_plane_eps.h"
 
 #include "../include/set2DEzHxHy_calc_half.h"
 
@@ -35,10 +35,10 @@ const double * const *set2DEzHxHy_calc_half(
     double *ez_range
 ){
 
-    double **eps;
+    double **eps_ez,**eps_hx,**eps_hy;
     double sigma,refractive_index;
-    const double *sigma_for_ezx,*sigma_for_ezy;    
-    const double *sigma_for_hx,*sigma_for_hy;
+    const double **sigma_for_ez;
+    const double **sigma_for_hx,**sigma_for_hy;
     double **ez,**hx,**hy;
 
     sigma=cu_sigma;
@@ -48,25 +48,44 @@ const double * const *set2DEzHxHy_calc_half(
     hx=init2DdoublePlane("in hx",y_length-1,x_length);
     hy=init2DdoublePlane("in hy",y_length,x_length-1);
 
-    eps=init2DdoublePlane("in set 2D eps.",y_length,x_length);
+    eps_ez=init2DdoublePlane("in set 2D eps ez.",y_length,x_length);
+    eps_hx=init2DdoublePlane("in set 2D eps hx.",y_length-1,x_length);
+    eps_hy=init2DdoublePlane("in set 2D eps hy.",y_length,x_length-1);
 
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
 
+    sigma_for_ez=set2DSigma_for_Ez(
+        y_length,
+        x_length,
+        sigma
+    );
 
-    sigma_for_ezx=setSigma_for_Ez(x_length,sigma);
-    sigma_for_ezy=setSigma_for_Ez(y_length,sigma);
-    sigma_for_hx=setSigma_for_Hx(y_length,sigma);
-    sigma_for_hy=setSigma_for_Hy(x_length,sigma);
+    set2DDoubleCSV(sigma_for_ez,"sigma2D_ez",y_length,x_length);
 
+    sigma_for_hx=set2DSigma_for_Hx(
+        y_length-1,
+        x_length,
+        sigma
+    );
+
+    set2DDoubleCSV(sigma_for_hx,"sigma2D_hx",y_length-1,x_length);
+
+    sigma_for_hy=set2DSigma_for_Hy(
+        y_length,
+        x_length-1,
+        sigma
+    );
+
+    set2DDoubleCSV(sigma_for_hy,"sigma2D_hy",y_length,x_length-1);
+
+    // set refractive index 
     // writable double pointer
     double **n_plane_for_ez,**n_plane_for_hx,**n_plane_for_hy;
 
     n_plane_for_ez=set2DRefractiveIndex(y_length,x_length,n_air);
     n_plane_for_hx=set2DRefractiveIndex(y_length-1,x_length,n_air);
     n_plane_for_hy=set2DRefractiveIndex(y_length,x_length-1,n_air);
-
-
 
     put_square(
         n_plane_for_ez,
@@ -85,48 +104,9 @@ const double * const *set2DEzHxHy_calc_half(
         y_length-1,
         x_length);
 
-    eps=set2D_eps_for_ez("nxn",n_plane_for_ez,y_length,x_length);
-
-
-
-    //  ez_x=coef1(x)*ez_x+coef2(x)*(hy-hy)
-    //  ez_y=coef1(y)*ez_y+coef2(y)*(hx-hx)-coef3*J
-    //  ez=ez_x+ez_y
-    //  hx=coef1(y)*hx+coef2(y)*(ez-ez)
-    //  hy=coef1(x)*hy+coef2(x)*(ez-ez)
-
-    //  sigma_x_for_ez,sigma_y_for_ez,sigma_x_for_hxy,sigma_y_for_hxy
-
-    // const double *sigma_x_for_ez;
-    // const double *sigma_y_for_ez;
-    // const double *sigma_x_for_hxy;
-    // const double *sigma_y_for_hxy;
-
-
-    // n_x_for_ez=set_n_for_ez(n_ref_x_length,excite_point_x,n_ref);
-    // n_y_for_ez=set_n_for_ez(n_ref_y_length,excite_point_y,n_ref);
-    // n_x_for_hxy=set_n_for_hxy(n_ref_x_length,n_ref);
-    // n_y_for_hxy=set_n_for_hxy(n_ref_y_length,n_ref);
-
-    // int n_ref_x_length,n_ref_y_length;
-    // double n_ref_value;
-
-    // n_ref_value=0.0;
-
-    // put_square(
-    //     n_ref_plane,
-    //     excite_point_x,
-    //     excite_point_y,
-    //     n_ref_x_length,
-    //     n_ref_y_length,
-    //     n_ref_value
-    // );
-
-    // sigma_x_for_ez=setSigma_for_Ez(x_length,sigma);
-    // sigma_y_for_ez=setSigma_for_Ez(y_length,sigma);
-
-    // sigma_x_for_hxy=setSigma_for_Hxy(x_length-1,sigma);
-    // sigma_y_for_hxy=setSigma_for_Hxy(y_length-1,sigma);
+    eps_ez=set2D_plane_eps("ez_eps",n_plane_for_ez,y_length,x_length);
+    eps_hx=set2D_plane_eps("hx_eps",n_plane_for_hx,y_length-1,x_length);
+    eps_hy=set2D_plane_eps("hy_eps",n_plane_for_hy,y_length,x_length-1);
 
 
     return (const double * const *)ez;
