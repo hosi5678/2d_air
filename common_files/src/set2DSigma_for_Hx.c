@@ -77,8 +77,6 @@ const double **set2DSigma_for_Hx(
    free(sigma_x);
    free(sigma_y);
 
-    // set2DDoubleCSV((const double * const *)sigma_plane,"sigma2D_hx",y_length,x_length);
-
     return (const double **)sigma_plane;
 
 }

@@ -15,7 +15,7 @@
 
 #include "../include/set2DSigma_for_Hy.h"
 
-const double *set2DSigma_for_Hy(
+const double **set2DSigma_for_Hy(
 //    const char *file_name,
    int y_length,
    int x_length,
@@ -67,11 +67,9 @@ const double *set2DSigma_for_Hy(
             sigma_plane[y][x]=sigma_y[y];
         }
     }
-   
 
     free(sigma_x);
     free(sigma_y);
-    // set2DDoubleCSV((const double * const *)sigma_plane,"sigma2D_hy",y_length,x_length);
 
     return (const double **)sigma_plane;
 
