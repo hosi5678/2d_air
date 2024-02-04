@@ -60,12 +60,13 @@ const double **set2DSigma_for_Hx(
 
     sigma_plane=init2DdoublePlane("hx 2d sigma.",y_length,x_length);
 
+    // hxはy方向に微分される。x方向は不要
     // 左右をコピー
-    for ( int y =pml_layer_half_side ; y < y_length-pml_layer_half_side ; y++ ){
-        for ( int x =0 ; x < x_length ; x++){
-                sigma_plane[y][x]=sigma_x[x];
-        }
-    }
+    // for ( int y =pml_layer_half_side ; y < y_length-pml_layer_half_side ; y++ ){
+    //     for ( int x =0 ; x < x_length ; x++){
+    //             sigma_plane[y][x]=sigma_x[x];
+    //     }
+    // }
 
     // 上下のコピー
      for ( int y = 0 ; y < y_length ; y++ ) {
@@ -73,6 +74,8 @@ const double **set2DSigma_for_Hx(
             sigma_plane[y][x]=sigma_y[y];
         }
     }
+
+    set2DDoubleCSV((const double **)sigma_plane,"sigma_2DPlane_hx",y_length,x_length);
    
    free(sigma_x);
    free(sigma_y);

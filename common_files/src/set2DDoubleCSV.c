@@ -11,7 +11,7 @@
 #include "../include/set2DDoubleCSV.h"
 
 void set2DDoubleCSV(
-   const double * const *vec,
+   const double **vec,
    const char *src_file_name,
    int y_length,
    int x_length

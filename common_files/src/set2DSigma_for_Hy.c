@@ -61,12 +61,15 @@ const double **set2DSigma_for_Hy(
         }
     }
 
+    // hyはx方向に微分されるので,y方向のsetは不要
     // 上下のコピー
-     for ( int y = 0 ; y < y_length ; y++ ) {
-        for( int x = pml_layer_half_side ; x <= x_length-pml_layer_half_side ; x++ ) {
-            sigma_plane[y][x]=sigma_y[y];
-        }
-    }
+    //  for ( int y = 0 ; y < y_length ; y++ ) {
+    //     for( int x = pml_layer_half_side ; x <= x_length-pml_layer_half_side ; x++ ) {
+    //         sigma_plane[y][x]=sigma_y[y];
+    //     }
+    // }
+
+    set2DDoubleCSV((const double **)sigma_plane,"sigma2DPlane_hy",y_length,x_length);
 
     free(sigma_x);
     free(sigma_y);

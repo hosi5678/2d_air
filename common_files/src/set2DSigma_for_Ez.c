@@ -65,6 +65,8 @@ const double **set2DSigma_for_Ez(
         }
     }
   
+    set2DDoubleCSV((const double **)sigma_plane,"sigma2DPlane_for_ez",y_length,x_length);
+
     free(sigma_x);
     free(sigma_y);
 

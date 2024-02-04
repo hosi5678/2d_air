@@ -16,6 +16,7 @@
 #include "../include/setCoef5.h"
 #include "../include/getFilePath.h"
 #include "../include/set1DDoubleCSV_Column.h"
+#include "../include/set2DDoutbleValue.h"
 #include "../include/set1DEyHz_half_calc.h"
 
 const double * const *set1DEyHz_half_calc(

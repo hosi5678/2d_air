@@ -23,7 +23,7 @@ const double **set2D_plane_eps(
       }
    }
 
-   set2DDoubleCSV((const double * const *)eps,src_file_name,y_length,x_length);
+   set2DDoubleCSV((const double **)eps,src_file_name,y_length,x_length);
 
    return (const double **)eps;
 

@@ -45,7 +45,7 @@ void put_square(
         }
    }
 
-    set2DDoubleCSV((const double * const *)n_plane_ez,"n_plane_ez",y_length,x_length);
+    set2DDoubleCSV((const double **)n_plane_ez,"n_plane_ez",y_length,x_length);
 
    // for hx
        // 右下をセット
@@ -71,7 +71,7 @@ void put_square(
         }
    }
 
-    set2DDoubleCSV((const double * const *)n_plane_hx,"n_plane_hx",y_length-1,x_length);
+    set2DDoubleCSV((const double **)n_plane_hx,"n_plane_hx",y_length-1,x_length);
 
 
     // hy
@@ -98,7 +98,7 @@ void put_square(
 
 
 
-    set2DDoubleCSV((const double * const *)n_plane_hy,"n_plane_hy",y_length,x_length-1);
+    set2DDoubleCSV((const double **)n_plane_hy,"n_plane_hy",y_length,x_length-1);
 
 
 
