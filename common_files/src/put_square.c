@@ -4,6 +4,8 @@
 #include "../include/common_parameter.h"
 #include "../include/put_square.h"
 
+// y_length x x_length内に正方形の屈折率を書き込む
+
 void put_square(
     double **n_plane_ez,
     double **n_plane_hx,
@@ -19,7 +21,6 @@ void put_square(
     printf("point y=%d\n",excite_point_y); // 9
 
     printf("n_ref_value=%f\n",n_ref_value); // 9
-
 
     // for ez
     // 右下をセット

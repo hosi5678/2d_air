@@ -57,10 +57,6 @@ const double * const *set2DEzHxHy_calc_half(
     sigma=cu_sigma;
     refractive_index=n_glass;
 
-    ez=init2DdoublePlane("in ez",y_length,x_length);
-    hx=init2DdoublePlane("in hx",y_length-1,x_length);
-    hy=init2DdoublePlane("in hy",y_length,x_length-1);
-
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
 
@@ -79,7 +75,6 @@ const double * const *set2DEzHxHy_calc_half(
     const double **sigma_ez;
     const double **sigma_hx;
     const double **sigma_hy;
-
 
     sigma_ez=set2DSigma_for_Ez(y_length,x_length,sigma);
     sigma_hx=set2DSigma_for_Hx(y_length-1,x_length,sigma);
@@ -120,21 +115,29 @@ const double * const *set2DEzHxHy_calc_half(
     const double **coef2_ez;
     const double **coef3_ez_J;
 
-    coef1_ez=setCoef1_ez(eps_ez,sigma_ez,y_length,x_length);
-    coef2_ez=setCoef2_ez(eps_ez,sigma_ez,y_length,x_length);
-    coef3_ez_J=setCoef3_ez(eps_ez,sigma_ez,y_length,x_length);
+    coef1_ez=setCoef1_ez("coef1_ez",eps_ez,sigma_ez,y_length,x_length);
+    coef2_ez=setCoef2_ez("coef2_ez",eps_ez,sigma_ez,y_length,x_length);
+    coef3_ez_J=setCoef3_ez("coef3_ez",eps_ez,sigma_ez,y_length,x_length);
    
     const double **coef1_hx;
     const double **coef2_hx;
 
-    coef1_hx=setCoef1_ez(eps_hx,sigma_hx,y_length-1,x_length);
-    coef2_hx=setCoef2_hx(eps_hx,sigma_hx,y_length-1,x_length);
+    coef1_hx=setCoef1_ez("coef1_hx",eps_hx,sigma_hx,y_length-1,x_length);
+    coef2_hx=setCoef2_hx("coef2_hx",eps_hx,sigma_hx,y_length-1,x_length);
 
     const double **coef1_hy;
     const double **coef2_hy;
 
-    coef1_hy=setCoef1_ez(eps_hy,sigma_hy,y_length,x_length-1);
-    coef2_hy=setCoef2_hx(eps_hy,sigma_hy,y_length,x_length-1);
+    coef1_hy=setCoef1_ez("coef1_hy",eps_hy,sigma_hy,y_length,x_length-1);
+    coef2_hy=setCoef2_hx("coef2_hy",eps_hy,sigma_hy,y_length,x_length-1);
+
+    // fdtd2d calc quad
+
+    ez=init2DdoublePlane("in ez",y_length,x_length);
+    hx=init2DdoublePlane("in hx",y_length-1,x_length);
+    hy=init2DdoublePlane("in hy",y_length,x_length-1);
+
+    // fdtd_2D_calc_quad();
 
     return (const double **)ez;
 }

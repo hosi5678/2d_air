@@ -4,6 +4,8 @@
 
 #include "../include/getFilePath.h"
 
+// file名のみを与えて、dir,拡張子をつけて文字列ポインタを返す
+
 char *getFilePath(const char *src_dir,const char *src_file_name,const char *extension){
 
    int dir_length;

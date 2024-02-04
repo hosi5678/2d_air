@@ -9,10 +9,11 @@
 #include "../include/setCoef2_ez.h"
 
 const double **setCoef2_ez(
-   const double **eps,
-   const double **sigma,
-   int y_length,
-   int x_length
+    const char *file_name,
+    const double **eps,
+    const double **sigma,
+    int y_length,
+    int x_length
 ) {
 
     double **coef;
@@ -24,12 +25,19 @@ const double **setCoef2_ez(
    for( int y=0;y<y_length;y++){
 
     for(int x=0;x<x_length;x++){
-        coef[y][x]=(2.0*dt/dx)/(2.0*eps[y][x]+sigma[y][x]*dt);
+
+        double epsx2=2.0*eps[y][x];
+        double sigmaxdt=sigma[y][x];
+        double dt_dx=dt/dx;
+
+        coef[y][x]=2.0*dt_dx/(epsx2+sigmaxdt);
+
+        // coef[y][x]=(2.0*dt/dx)/(2.0*eps[y][x]+sigma[y][x]*dt);
     }
 
    }
 
-   set2DDoubleCSV((const double **)coef,"coef2_ez",y_length,x_length);
+   set2DDoubleCSV((const double **)coef,file_name,y_length,x_length);
 
 
     return (const double **)coef;
