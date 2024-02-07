@@ -31,9 +31,19 @@ const double **setCoef2_hx(
         double sigmaxdt=sigma[y][x]*dt;
         double dt_dx=dt/dx;
 
-        coef[y][x]=2.0*dt_dx*eps_u0/(epsx2+sigmaxdt);
+        // coef[y][x]=2.0*dt_dx*eps_u0/(epsx2+sigmaxdt);
 
-        // coef[y][x]=(2.0*dt*eps[y][x]/(dx*u0))/(2.0*eps[y][x]+sigma[y][x]*dt);
+        coef[y][x]=2.0*dt*eps[y][x]/((epsx2+sigmaxdt)*u0*dx);
+
+        // double test=(2.0*dt*eps[y][x]/(dx*u0))*1.0/(2.0*eps[y][x]+sigma[y][x]*dt);
+
+        // if(test!=coef[y][x]){
+        //     printf("error..\n");
+        //     printf("test=%.50f\n",test);
+        //     printf("coef=%.50f\n",coef[y][x]);
+        //     exit(1);
+        // }else{}
+
     }
 
    }

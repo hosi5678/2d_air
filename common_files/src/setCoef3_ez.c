@@ -9,35 +9,33 @@
 
 #include "../include/setCoef3_ez.h"
 
-const double **setCoef3_ez(
+const double setCoef3_ez(
     const char *file_name,
     const double **eps,
     const double **sigma,
-    int x_length,
-    int y_length
+    int excite_point_y,
+    int excite_point_x
 ) {
 
-    double **coef;
+    double coef;
 
     double dt=get_dt();
 
-    coef=init2DdoublePlane("ez coef3",y_length,x_length);
-
-   for( int y=0;y<y_length;y++){
-
-    for(int x=0;x<x_length;x++){
-
-        double epsx2=2.0*eps[y][x];
-        double sigmaxdt=sigma[y][x]*dt;
-
-        coef[y][x]=(2.0*dt)/(epsx2+sigmaxdt);
-        // coef[y][x]=(2.0*dt)/(2.0*eps[y][x]+sigma[y][x]*dt);
-    }
-
-   }
-
-   set2DDoubleCSV((const double **)coef,file_name,y_length,x_length);
+    int y=excite_point_y;
+    int x=excite_point_x;
 
 
-    return (const double **)coef;
+    double epsx2=2.0*eps[y][x];
+    double sigmaxdt=sigma[y][x]*dt;
+
+    coef=(2.0*dt)/(epsx2+sigmaxdt);
+
+        // double test=(2.0*dt)/(2.0*eps[y][x]+sigma[y][x]*dt);
+
+        // if(test!=coef[y][x]){
+        //     printf("test=%.40f\n",test);
+        //     printf("coef=%.40f\n",coef[y][x]);
+        // }
+
+    return coef;
 }

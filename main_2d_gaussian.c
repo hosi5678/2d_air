@@ -12,19 +12,18 @@
 #include "./common_files/include/checkAlloc1DInt.h"
 #include "./common_files/include/getFilePath.h"
 #include "./common_files/include/setGaussianWave.h"
-#include "./common_files/include/set1DEyHz.h"
-#include "./common_files/include/set2DEzHxHy_calc_half.h"
-#include "./common_files/include/setEtyCSV.h"
-#include "./common_files/include/set_ey_timestep_csv.h"
+// #include "./common_files/include/setEtyCSV.h"
 #include "./common_files/include/set1DDoubleCSV_Column.h"
 #include "./common_files/include/fft.h"
 #include "./common_files/include/dft.h"
 #include "./common_files/include/getPeak.h"
 #include "./common_files/include/frequency_analysis.h"
 
+#include "./common_files/include/fdtd2D_calc_main.h"
+
 #include "./fdtd2d_gaussian/include/memo_gaussian.h"
 
-int main(void) {
+int main() {
 
     printf("Gaussian Pulse Excitation.\n");
 
@@ -38,8 +37,8 @@ int main(void) {
     // char *file_name;
 
     int x_length,y_length;
-    x_length=1+2*(refractive_layer_half_side+air_layer_half_side+pml_layer_half_side);
-    y_length=x_length;
+    y_length=1+2*(refractive_layer_half_side_y+air_layer_half_side+pml_layer_half_side);
+    x_length=1+2*(refractive_layer_half_side_x+air_layer_half_side+pml_layer_half_side);
 
     int excite_point_x,excite_point_y;
     excite_point_x=(x_length-1)/2;
@@ -55,7 +54,6 @@ int main(void) {
 
     printf("(main) x_length=%d\n",x_length);
     printf("(main) y_length=%d\n",y_length);
-
 
     printf("(main) calc timestep=%d\n",calculation_timestep);
     printf("(main) gaussian peak=%d\n",gaussianPeaktimePosition);
@@ -73,7 +71,7 @@ int main(void) {
 
     // 1 dimensional fdtd calculation
     // ety_const_2d_plane=
-    set2DEzHxHy_calc_half(
+    fdtd2D_calc_main(
        x_length,
        y_length,
        calculation_timestep,

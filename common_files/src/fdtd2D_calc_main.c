@@ -30,14 +30,15 @@
 #include "../include/setCoef3_ez.h"
 #include "../include/setCoef2_hx.h"
 #include "../include/set2DDoutbleValue.h"
+#include "../include/fdtd2D_calc_full.h"
+#include "../include/fdtd2D_calc_quad.h"
+#include "../include/fdtd2D_calc_main.h"
 
-#include "../include/set2DEzHxHy_calc_half.h"
-
-const double * const *set2DEzHxHy_calc_half(
+const double **fdtd2D_calc_main(
     int x_length,
     int y_length,
     int time_length,
-    double *src_J,
+    const double *src_J,
     int excite_point_x,
     int excite_point_y,
     double *ez_range
@@ -54,23 +55,11 @@ const double * const *set2DEzHxHy_calc_half(
 
     double **ez,**hx,**hy;
 
-    sigma=cu_sigma;
-    refractive_index=n_glass;
+    sigma=0;
+    refractive_index=1.0;
 
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
-
-    sigma_dx=setSigma_dx(x_length,sigma);
-    sigma_dy=setSigma_dx(y_length,sigma);
-
-    set1DDoubleCSV_Column(sigma_dx,"./csv_files/sigma_dx.csv",x_length);
-    set1DDoubleCSV_Column(sigma_dy,"./csv_files/sigma_dy.csv",y_length);
-
-    sigma_half_dx=setSigma_half_dx(x_length-1,sigma);
-    sigma_half_dy=setSigma_half_dx(y_length-1,sigma);
-
-    set1DDoubleCSV_Column(sigma_half_dx,"./csv_files/sigma_half_dx.csv",x_length-1);
-    set1DDoubleCSV_Column(sigma_half_dy,"./csv_files/sigma_half_dy.csv",y_length-1);
 
     const double **sigma_ez;
     const double **sigma_hx;
@@ -101,23 +90,17 @@ const double * const *set2DEzHxHy_calc_half(
         refractive_index
     );
 
-    set2DDoubleCSV(
-        (const double **)n_plane_for_hx,
-        "n_ref_plane",
-        y_length-1,
-        x_length);
-
     eps_ez=set2D_plane_eps("ez_eps",n_plane_for_ez,y_length,x_length);
     eps_hx=set2D_plane_eps("hx_eps",n_plane_for_hx,y_length-1,x_length);
     eps_hy=set2D_plane_eps("hy_eps",n_plane_for_hy,y_length,x_length-1);
 
     const double **coef1_ez;
     const double **coef2_ez;
-    const double **coef3_ez_J;
+    double coef3_ez;
 
     coef1_ez=setCoef1_ez("coef1_ez",eps_ez,sigma_ez,y_length,x_length);
     coef2_ez=setCoef2_ez("coef2_ez",eps_ez,sigma_ez,y_length,x_length);
-    coef3_ez_J=setCoef3_ez("coef3_ez",eps_ez,sigma_ez,y_length,x_length);
+    coef3_ez=setCoef3_ez("coef3_ez",eps_ez,sigma_ez,excite_point_y,excite_point_x);
    
     const double **coef1_hx;
     const double **coef2_hx;
@@ -133,11 +116,25 @@ const double * const *set2DEzHxHy_calc_half(
 
     // fdtd2d calc quad
 
+    // ez,hx,hyの2次元配列を作成する。
     ez=init2DdoublePlane("in ez",y_length,x_length);
     hx=init2DdoublePlane("in hx",y_length-1,x_length);
     hy=init2DdoublePlane("in hy",y_length,x_length-1);
 
-    // fdtd_2D_calc_quad();
+    
+    const double **vec;
 
-    return (const double **)ez;
+    vec=fdtd2D_calc_quad(
+        time_length,
+        y_length,x_length,
+        excite_point_y,excite_point_x,
+        coef1_ez,coef2_ez,coef3_ez,
+        coef1_hx,coef2_hx,
+        coef1_hy,coef2_hy,
+        ez,hx,hy,
+        src_J,
+        ez_range
+    );
+
+    return vec;
 }

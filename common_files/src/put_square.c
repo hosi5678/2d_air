@@ -24,15 +24,15 @@ void put_square(
 
     // for ez
     // 右下をセット
-    for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side ; y++ ) {
-        for(int x = excite_point_x ; x <= excite_point_x+refractive_layer_half_side ; x++ ) {
+    for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side_y ; y++ ) {
+        for(int x = excite_point_x ; x <= excite_point_x+refractive_layer_half_side_x ; x++ ) {
             n_plane_ez[y][x]=n_ref_value;
         }
     }
 
     // 左下をコピー
-     for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side ; y++ ) {
-        for(int x = excite_point_x - refractive_layer_half_side ; x < excite_point_x ; x++ ) {
+     for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side_y ; y++ ) {
+        for(int x = excite_point_x - refractive_layer_half_side_x ; x < excite_point_x ; x++ ) {
             // printf("y,x=%d,%d\n",y,x);
             // printf("2*excite_point_x-x=%d\n",2*excite_point_x-x);
             n_plane_ez[y][x]=n_plane_ez[y][2*excite_point_x-x];
@@ -40,8 +40,8 @@ void put_square(
     }
    
    // 右上,左上をコピー
-   for ( int y= excite_point_y - refractive_layer_half_side ; y < excite_point_y ; y++ ){
-        for(int x=excite_point_x - refractive_layer_half_side ; x <= excite_point_x + refractive_layer_half_side ; x++){
+   for ( int y= excite_point_y - refractive_layer_half_side_y ; y < excite_point_y ; y++ ){
+        for(int x=excite_point_x - refractive_layer_half_side_x ; x <= excite_point_x + refractive_layer_half_side_x ; x++){
             n_plane_ez[y][x]=n_plane_ez[2*excite_point_y-y][x];
         }
    }
@@ -50,15 +50,15 @@ void put_square(
 
    // for hx
        // 右下をセット
-    for (int y = excite_point_y ; y < excite_point_y+refractive_layer_half_side ; y++ ) {
-        for(int x = excite_point_x ; x <= excite_point_x+refractive_layer_half_side ; x++ ) {
+    for (int y = excite_point_y ; y < excite_point_y+refractive_layer_half_side_y ; y++ ) {
+        for(int x = excite_point_x ; x <= excite_point_x+refractive_layer_half_side_x ; x++ ) {
             n_plane_hx[y][x]=n_ref_value;
         }
     }
 
         // 左下をコピー
-     for (int y = excite_point_y ; y < excite_point_y+refractive_layer_half_side ; y++ ) {
-        for(int x = excite_point_x - refractive_layer_half_side ; x < excite_point_x ; x++ ) {
+     for (int y = excite_point_y ; y < excite_point_y+refractive_layer_half_side_y ; y++ ) {
+        for(int x = excite_point_x - refractive_layer_half_side_x ; x < excite_point_x ; x++ ) {
             // printf("y,x=%d,%d\n",y,x);
             // printf("2*excite_point_x-x=%d\n",2*excite_point_x-x);
             n_plane_hx[y][x]=n_plane_hx[y][2*excite_point_x-x];
@@ -66,8 +66,8 @@ void put_square(
     }
 
    // 右上,左上をコピー
-   for ( int y= excite_point_y - refractive_layer_half_side ; y < excite_point_y ; y++ ){
-        for(int x=excite_point_x - refractive_layer_half_side ; x <= excite_point_x + refractive_layer_half_side ; x++){
+   for ( int y= excite_point_y - refractive_layer_half_side_y ; y < excite_point_y ; y++ ){
+        for(int x=excite_point_x - refractive_layer_half_side_x ; x <= excite_point_x + refractive_layer_half_side_x ; x++){
             n_plane_hx[y][x]=n_plane_hx[2*excite_point_y-1-y][x];
         }
    }
@@ -77,22 +77,22 @@ void put_square(
 
     // hy
     // 右下をセット
-    for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side ; y++ ) {
-        for(int x = excite_point_x ; x < excite_point_x+refractive_layer_half_side ; x++ ) {
+    for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side_y ; y++ ) {
+        for(int x = excite_point_x ; x < excite_point_x+refractive_layer_half_side_x ; x++ ) {
             n_plane_hy[y][x]=n_ref_value;
         }
     }
 
     // 左下をコピー
-     for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side ; y++ ) {
-        for(int x = excite_point_x - refractive_layer_half_side ; x < excite_point_x ; x++ ) {
+     for (int y = excite_point_y ; y <= excite_point_y+refractive_layer_half_side_y ; y++ ) {
+        for(int x = excite_point_x - refractive_layer_half_side_x ; x < excite_point_x ; x++ ) {
             n_plane_hy[y][x]=n_plane_hy[y][2*excite_point_x-1-x];
         }
     }
 
    // 右上,左上をコピー
-   for ( int y = excite_point_y-refractive_layer_half_side ; y < excite_point_y ; y++ ){
-        for(int x=excite_point_x - refractive_layer_half_side ; x < excite_point_x + refractive_layer_half_side ; x++){
+   for ( int y = excite_point_y-refractive_layer_half_side_y ; y < excite_point_y ; y++ ){
+        for(int x=excite_point_x - refractive_layer_half_side_x ; x < excite_point_x + refractive_layer_half_side_x ; x++){
             n_plane_hy[y][x]=n_plane_hy[2*excite_point_y-1-y][x];
         }
    }

@@ -5,6 +5,7 @@ directory="./csv_files"
 if [ -d "$directory" ]; then
    echo "direcory:" "$directory found"
    cd "$directory"
+   rm *.csv
    touch "dummy.csv"
    cd ..
 

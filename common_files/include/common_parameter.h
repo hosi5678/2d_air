@@ -18,7 +18,7 @@
 #define dx 20e-9 // 25e-9
 #define time_margin 0.98
 
-#define fft_length 128
+#define fft_length 16
 
 #define gaussianPeaktimePosition 16
 
@@ -32,7 +32,8 @@
 #define n_glass 1.55
 
 // for test
-#define refractive_layer_half_side 2
+#define refractive_layer_half_side_y 2
+#define refractive_layer_half_side_x 2
 // #define refractive_layer_half_side_y 2
 #define air_layer_half_side 2
 #define pml_layer_half_side 5

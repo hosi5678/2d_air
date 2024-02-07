@@ -30,7 +30,12 @@ const double **setCoef1_ez(
 
         coef[y][x]=(epsx2-sigmaxdt)/(epsx2+sigmaxdt);
 
-        // coef[y][x]=(2.0*eps[y][x]-sigma[y][x]*dt)/(2.0*eps[y][x]+sigma[y][x]*dt);
+        // double test=(2.0*eps[y][x]-sigma[y][x]*dt)/(2.0*eps[y][x]+sigma[y][x]*dt);
+
+        // if(test!=coef[y][x]){
+        //     perror("error");
+        //     exit(1);
+        // }
     }
    }
 

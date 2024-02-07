@@ -33,8 +33,6 @@ void set2DDoubleCSV(
 
     strcpy(file_name, file_path);
 
-    printf("file_name=%s was created.\n",file_name);
-
     fd=open(file_name, option, pmode);
 
     if(fd == -1){
@@ -80,6 +78,8 @@ void set2DDoubleCSV(
 
          } // y-loop
 
+            printf("file_name=%s was created.\n",file_name);
+
             free(file_name);
 
             fclose(fp);
@@ -87,8 +87,5 @@ void set2DDoubleCSV(
         }
 
     }
-
-
-
 
 }

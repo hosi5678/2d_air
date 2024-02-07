@@ -27,12 +27,19 @@ const double **setCoef2_ez(
     for(int x=0;x<x_length;x++){
 
         double epsx2=2.0*eps[y][x];
-        double sigmaxdt=sigma[y][x];
+        double sigmaxdt=sigma[y][x]*dt;
         double dt_dx=dt/dx;
 
         coef[y][x]=2.0*dt_dx/(epsx2+sigmaxdt);
 
-        // coef[y][x]=(2.0*dt/dx)/(2.0*eps[y][x]+sigma[y][x]*dt);
+        // double test=(2.0*dt/dx)/(2.0*eps[y][x]+sigma[y][x]*dt);
+
+        // if(test!=coef[y][x]){
+        //     perror("error");
+        //     printf("test=%f\n",test);
+        //     exit(1);
+        // }
+
     }
 
    }
