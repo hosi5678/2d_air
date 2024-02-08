@@ -12,13 +12,10 @@
 
 #define dimension 2
 
-#define xcells 19
-#define ycells 19
-
 #define dx 20e-9 // 25e-9
 #define time_margin 0.98
 
-#define fft_length 16
+#define fft_length 8192
 
 #define gaussianPeaktimePosition 16
 
