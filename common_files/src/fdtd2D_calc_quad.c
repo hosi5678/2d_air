@@ -1,9 +1,13 @@
 #include <stdio.h>
 
+#include "../include/common_parameter.h"
 #include "../include/set_timestep_csv.h"
+#include "../include/checkAlloc1DDouble.h"
+#include "../include/set1DDoubleCSV_Column.h"
+
 #include "../include/fdtd2D_calc_quad.h"
 
-const double **fdtd2D_calc_quad(
+const double *fdtd2D_calc_quad(
         int timestep,
 
         int y_length,
@@ -36,6 +40,7 @@ const double **fdtd2D_calc_quad(
       printf("(in quad) half_y=%d\n",half_y);
       printf("(in quad) half_x=%d\n",half_x);
 
+      double *ez_t=checkAlloc1DDouble("in quad ez",timestep);
 
       for ( int time = 0 ; time < timestep ; time++ ) {
 
@@ -138,7 +143,10 @@ const double **fdtd2D_calc_quad(
                hy[y][x]=-1.0*hy[y][x_length-2-x];
             }
          }
-        
+
+         // ezの波形を取得する
+
+         ez_t[time]=ez[y][x];
 
 
 
@@ -156,5 +164,15 @@ const double **fdtd2D_calc_quad(
 
       }
 
+      // ez_tを2のべき乗だけ後ろの方を切り取る
+      double *ez_for_fft=checkAlloc1DDouble("in quad ez fft.",fft_length);
+
+      for(int time=timestep-fft_length;time<timestep;time++){
+         ez_for_fft[time-timestep+fft_length]=ez_t[time];
+      }
+
+      set1DDoubleCSV_Column(ez_for_fft,"./csv_files/ez_excite_point.csv",fft_length);
+
+      return (const double *)ez_for_fft;
 
 }

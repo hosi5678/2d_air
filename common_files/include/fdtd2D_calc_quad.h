@@ -1,7 +1,7 @@
 #ifndef A8BEFB0B_A170_4553_9C05_2BB578F7BC3D
 #define A8BEFB0B_A170_4553_9C05_2BB578F7BC3D
 
-const double **fdtd2D_calc_quad(
+const double *fdtd2D_calc_quad(
         int timestep,
         int y_length,
         int x_length,

@@ -31,7 +31,6 @@ int main() {
 
     start_clock = clock();
 
-    // const double * const *ety_const_2d_plane;
     double *exciteWave;
 
     // char *file_name;
@@ -41,8 +40,8 @@ int main() {
     x_length=1+2*(refractive_layer_half_side_x+air_layer_half_side+pml_layer_half_side);
 
     int excite_point_x,excite_point_y;
-    excite_point_x=(x_length-1)/2;
     excite_point_y=(y_length-1)/2;
+    excite_point_x=(x_length-1)/2;
 
     double *ez_range;
     ez_range=checkAlloc1DDouble("in main ez range.",2);
@@ -51,9 +50,9 @@ int main() {
     int fft_timestep_end=fft_timestep_start+fft_length;
 
     int calculation_timestep=fft_timestep_end;
-
-    printf("(main) x_length=%d\n",x_length);
+    
     printf("(main) y_length=%d\n",y_length);
+    printf("(main) x_length=%d\n",x_length);
 
     printf("(main) calc timestep=%d\n",calculation_timestep);
     printf("(main) gaussian peak=%d\n",gaussianPeaktimePosition);
@@ -69,9 +68,11 @@ int main() {
     ez_range[0]=ez_excitePoint_max;
     ez_range[1]=ez_excitePoint_min;
 
+    const double *vec;
+
     // 1 dimensional fdtd calculation
     // ety_const_2d_plane=
-    fdtd2D_calc_main(
+    vec=fdtd2D_calc_main(
        x_length,
        y_length,
        calculation_timestep,

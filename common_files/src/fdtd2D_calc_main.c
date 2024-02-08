@@ -34,7 +34,7 @@
 #include "../include/fdtd2D_calc_quad.h"
 #include "../include/fdtd2D_calc_main.h"
 
-const double **fdtd2D_calc_main(
+const double *fdtd2D_calc_main(
     int x_length,
     int y_length,
     int time_length,
@@ -55,8 +55,8 @@ const double **fdtd2D_calc_main(
 
     double **ez,**hx,**hy;
 
-    sigma=0;
-    refractive_index=1.0;
+    sigma=0.0;
+    refractive_index=n_air;
 
     printf("in calc:x_length:%d\n",x_length);
     printf("in calc:y_length:%d\n",y_length);
@@ -122,7 +122,7 @@ const double **fdtd2D_calc_main(
     hy=init2DdoublePlane("in hy",y_length,x_length-1);
 
     
-    const double **vec;
+    const double *vec;
 
     vec=fdtd2D_calc_quad(
         time_length,
