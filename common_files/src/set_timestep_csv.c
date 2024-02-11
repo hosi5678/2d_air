@@ -67,7 +67,7 @@ void set_timestep_csv(
 
             // x axisの書き込み
             // tabの書き込み
-            fprintf(fp,"\t");
+            // fprintf(fp,",");
 
             for(int x=0;x<x_length;x++){
                 if(x==x_length-1){
@@ -100,9 +100,6 @@ void set_timestep_csv(
         }
 
     }
-
-//      使えない。
-//        set2DDoubleCSV(ez_2d_plane,file_name,y_length,x_length);
 
         // fclose(fp);
         free(dir_path);

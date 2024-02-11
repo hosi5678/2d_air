@@ -124,6 +124,7 @@ int main() {
     // memo_gaussian(peak,&ey_max,&ey_min,x_cells,calculation_timestep);
 
     free(exciteWave);
+    free(vec);
     // free(fft_array);
     // free(file_name);
 

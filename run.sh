@@ -1,5 +1,52 @@
 #!/bin/bash
 
+directory="./ez_timestep_csvs/"
+
+if [ -d "$directory" ]; then
+   echo "direcory:" "$directory found"
+   cd "$directory"
+   touch "dummy.csv"
+   rm *.csv
+   cd ..
+else
+   mkdir "$directory"
+   cd "$directory"
+   touch "dummy.csv"
+   cd ..
+fi
+
+directory="./hx_timestep_csvs/"
+
+if [ -d "$directory" ]; then
+   echo "direcory:" "$directory found"
+   cd "$directory"
+   touch "dummy.csv"
+   rm *.csv
+   cd ..
+else
+   mkdir "$directory"
+   cd "$directory"
+   touch "dummy.csv"
+   cd ..
+fi
+
+directory="./hy_timestep_csvs/"
+
+if [ -d "$directory" ]; then
+   echo "direcory:" "$directory found"
+   cd "$directory"
+   touch "dummy.csv"
+   rm *.csv
+   cd ..
+else
+   mkdir "$directory"
+   cd "$directory"
+   touch "dummy.csv"
+   cd ..
+fi
+
+
+
 directory="./csv_files/"
 
 if [ -d "$directory" ]; then

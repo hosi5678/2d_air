@@ -51,8 +51,7 @@ void set2DDoubleCSV(
             // write here
 
          // x axisの書き込み
-         // tabの書き込み
-         fprintf(fp,"\t");
+         fprintf(fp,",");
 
          for(int x=0;x<x_length;x++){
             if(x==x_length-1){

@@ -14,7 +14,7 @@
 #define dx 20e-9 // 25e-9
 #define time_margin 0.97
 
-#define fft_length 512
+#define fft_length 1024
 
 #define gaussianPeaktimePosition 16
 
