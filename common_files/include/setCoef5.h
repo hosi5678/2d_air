@@ -1,6 +1,0 @@
-#ifndef CE65FF91_0DDC_4758_B4B2_7ABDBBC07B48
-#define CE65FF91_0DDC_4758_B4B2_7ABDBBC07B48
-
-double *setCoef5(double* eps,int length);
-
-#endif /* CE65FF91_0DDC_4758_B4B2_7ABDBBC07B48 */

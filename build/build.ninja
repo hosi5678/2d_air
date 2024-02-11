@@ -55,8 +55,6 @@ build CMakeFiles/main.dir/main_2d_gaussian.c.o: C_COMPILER__main_unscanned_Debug
   INCLUDES = -I/home/user/project/2d_air/fdtd2d_gaussian/./include -I/home/user/project/2d_air/common_files/./include
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir
-  TARGET_COMPILE_PDB = CMakeFiles/main.dir/
-  TARGET_PDB = main.pdb
 
 
 # =============================================================================
@@ -72,9 +70,8 @@ build main: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main_2d_gaussian
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/main.dir/
   TARGET_FILE = main
-  TARGET_PDB = main.pdb
+  TARGET_PDB = main.dbg
 
 
 #############################################
@@ -143,16 +140,12 @@ build fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/src/memo_gaussian.c.o: 
   FLAGS = -g
   OBJECT_DIR = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir
   OBJECT_FILE_DIR = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/src
-  TARGET_COMPILE_PDB = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/fdtd1d_lib_gaussian.pdb
-  TARGET_PDB = fdtd2d_gaussian/libfdtd1d_lib_gaussian.pdb
 
 build fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/src/setGaussianWave.c.o: C_COMPILER__fdtd1d_lib_gaussian_unscanned_Debug /home/user/project/2d_air/fdtd2d_gaussian/src/setGaussianWave.c || cmake_object_order_depends_target_fdtd1d_lib_gaussian
   DEP_FILE = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/src/setGaussianWave.c.o.d
   FLAGS = -g
   OBJECT_DIR = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir
   OBJECT_FILE_DIR = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/src
-  TARGET_COMPILE_PDB = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/fdtd1d_lib_gaussian.pdb
-  TARGET_PDB = fdtd2d_gaussian/libfdtd1d_lib_gaussian.pdb
 
 
 # =============================================================================
@@ -167,9 +160,8 @@ build fdtd2d_gaussian/libfdtd1d_lib_gaussian.a: C_STATIC_LIBRARY_LINKER__fdtd1d_
   OBJECT_DIR = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = fdtd2d_gaussian/CMakeFiles/fdtd1d_lib_gaussian.dir/fdtd1d_lib_gaussian.pdb
   TARGET_FILE = fdtd2d_gaussian/libfdtd1d_lib_gaussian.a
-  TARGET_PDB = fdtd2d_gaussian/libfdtd1d_lib_gaussian.pdb
+  TARGET_PDB = fdtd1d_lib_gaussian.a.dbg
 
 
 #############################################
@@ -213,328 +205,216 @@ build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/antisymmetryCheck.c.o: C
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checAlloc1DInt.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/checAlloc1DInt.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checAlloc1DInt.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checkAlloc1DDouble.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/checkAlloc1DDouble.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checkAlloc1DDouble.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/check_2_n_power.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/check_2_n_power.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/check_2_n_power.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/dft.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/dft.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/dft.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_full.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/fdtd2D_calc_full.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_full.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_main.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/fdtd2D_calc_main.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_main.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_quad.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/fdtd2D_calc_quad.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_quad.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fft.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/fft.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fft.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/frequency_analysis.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/frequency_analysis.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/frequency_analysis.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getFilePath.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/getFilePath.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getFilePath.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getPeak.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/getPeak.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getPeak.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/get_dt.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/get_dt.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/get_dt.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/init2DdoublePlane.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/put_square.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Column.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set1DDoubleCSV_Column.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Column.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Row.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set1DDoubleCSV_Row.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Row.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DIntCSV_Column.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set1DIntCSV_Column.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DIntCSV_Column.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleCSV.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2DDoubleCSV.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleCSV.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleValue.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2DDoubleValue.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleValue.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DRefractiveIndex.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2DRefractiveIndex.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DRefractiveIndex.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Ez.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2DSigma_for_Ez.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Ez.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hx.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2DSigma_for_Hx.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hx.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hy.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2DSigma_for_Hy.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hy.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2D_plane_eps.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set2D_plane_eps.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2D_plane_eps.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef1.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1_ez.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef1_ez.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1_ez.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef2.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_ez.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef2_ez.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_ez.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_hx.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef2_hx.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_hx.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef3.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3_ez.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef3_ez.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3_ez.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef4.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef4.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef4.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef5.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setCoef5.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef5.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setEtyCSV.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setEtyCSV.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setEtyCSV.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setSigma.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setSigma_dx.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setSigma_half_dx.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set_timestep_csv.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/swap.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/swap.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/swap.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/symmetryCheck.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o.d
   FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
 
 # =============================================================================
@@ -544,14 +424,13 @@ build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o: C_COM
 #############################################
 # Link the static library common_files/libfdtd1d_common_lib.a
 
-build common_files/libfdtd1d_common_lib.a: C_STATIC_LIBRARY_LINKER__fdtd1d_common_lib_Debug common_files/CMakeFiles/fdtd1d_common_lib.dir/src/antisymmetryCheck.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checAlloc1DInt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checkAlloc1DDouble.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/check_2_n_power.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/dft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_full.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_main.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_quad.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/frequency_analysis.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getFilePath.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getPeak.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/get_dt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Row.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DIntCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleValue.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DRefractiveIndex.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hy.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2D_plane_eps.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef4.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef5.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setEtyCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/swap.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o
+build common_files/libfdtd1d_common_lib.a: C_STATIC_LIBRARY_LINKER__fdtd1d_common_lib_Debug common_files/CMakeFiles/fdtd1d_common_lib.dir/src/antisymmetryCheck.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checAlloc1DInt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checkAlloc1DDouble.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/check_2_n_power.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/dft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_full.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_main.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_quad.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/frequency_analysis.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getFilePath.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getPeak.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/get_dt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Row.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DIntCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleValue.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DRefractiveIndex.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hy.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2D_plane_eps.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setEtyCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/swap.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
   TARGET_FILE = common_files/libfdtd1d_common_lib.a
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
+  TARGET_PDB = fdtd1d_common_lib.a.dbg
 
 
 #############################################
@@ -618,14 +497,14 @@ build fdtd2d_gaussian/all: phony fdtd2d_gaussian/libfdtd1d_lib_gaussian.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/user/project/2d_air/CMakeLists.txt /home/user/project/2d_air/common_files/CMakeLists.txt /home/user/project/2d_air/fdtd2d_gaussian/CMakeLists.txt /usr/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.27/Modules/CMakeCInformation.cmake /usr/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.27/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.27/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU.cmake /usr/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.27/Modules/Platform/Linux.cmake /usr/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.4/CMakeCCompiler.cmake CMakeFiles/3.27.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/user/project/2d_air/CMakeLists.txt /home/user/project/2d_air/common_files/CMakeLists.txt /home/user/project/2d_air/fdtd2d_gaussian/CMakeLists.txt /usr/share/cmake-3.27/Modules/CMakeCInformation.cmake /usr/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.27/Modules/Platform/Linux.cmake /usr/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.4/CMakeCCompiler.cmake CMakeFiles/3.27.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/user/project/2d_air/CMakeLists.txt /home/user/project/2d_air/common_files/CMakeLists.txt /home/user/project/2d_air/fdtd2d_gaussian/CMakeLists.txt /usr/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c /usr/share/cmake-3.27/Modules/CMakeCInformation.cmake /usr/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.27/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake-3.27/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /usr/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU.cmake /usr/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.27/Modules/Platform/Linux.cmake /usr/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.4/CMakeCCompiler.cmake CMakeFiles/3.27.4/CMakeSystem.cmake: phony
+build /home/user/project/2d_air/CMakeLists.txt /home/user/project/2d_air/common_files/CMakeLists.txt /home/user/project/2d_air/fdtd2d_gaussian/CMakeLists.txt /usr/share/cmake-3.27/Modules/CMakeCInformation.cmake /usr/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.27/Modules/Compiler/GNU.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.27/Modules/Platform/Linux.cmake /usr/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.4/CMakeCCompiler.cmake CMakeFiles/3.27.4/CMakeSystem.cmake: phony
 
 
 #############################################

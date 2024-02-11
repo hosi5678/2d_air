@@ -1,6 +1,0 @@
-#ifndef F288C580_45DA_4D03_A691_70C33E4872F3
-#define F288C580_45DA_4D03_A691_70C33E4872F3
-
-double *setCoef4(double* eps,int length);
-
-#endif /* F288C580_45DA_4D03_A691_70C33E4872F3 */
