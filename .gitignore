@@ -10,6 +10,10 @@
 ./fdtd1d_gaussian/build/
 ./fdtd1d_sinwave/build/
 
+*.yaml
+*.cmake
+*.log
+*.ninja
 *.png
 *.mp4
 *.txt

@@ -4,6 +4,7 @@
 #include "../include/set_timestep_csv.h"
 #include "../include/checkAlloc1DDouble.h"
 #include "../include/set1DDoubleCSV_Column.h"
+#include "../include/set1DDoubleTimestepCSVs.h"
 
 #include "../include/fdtd2D_calc_quad.h"
 
@@ -27,7 +28,7 @@ const double *fdtd2D_calc_quad(
         double **hx,
         double **hy,
         const double *src_J,
-        double *ez_range
+        double *ez_range // [0]:max,[1] :min
     ) {
 
       printf("(in quad) y_length=%d\n",y_length);
@@ -148,8 +149,6 @@ const double *fdtd2D_calc_quad(
 
          ez_t[time]=ez[y][x];
 
-
-
          // for(int y=0;y<y_length;y++){
          //    for(int x=0;x<x_length-1;x++){
          //       double diff_ez_dx=ez[y][x+1]-ez[y][x];
@@ -157,12 +156,37 @@ const double *fdtd2D_calc_quad(
          //    }
          // }
 
+         // ezの横方向の波形をtimestep毎に記録する
+         set1DDoubleTimestepCSVs(
+            "./ez_graph_csvs/",
+            "ez_graph_timestep_",
+            ez[y],
+            time,
+            x_length
+         );
+
          set_timestep_csv("./ez_timestep_csvs/","ez_timestep_",ez,time,y_length,x_length);
          set_timestep_csv("./hx_timestep_csvs/","hx_timestep_",hx,time,y_length-1,x_length);
          set_timestep_csv("./hy_timestep_csvs/","hy_timestep_",hy,time,y_length,x_length-1);
 
 
       }
+
+      // double ez_max=0.0;
+      // double ez_min=0.0;
+
+      for(int timestep=0;timestep<600;timestep++) {
+         if(ez_t[timestep]>ez_range[0]) ez_range[0]=ez_t[timestep];
+         if(ez_t[timestep]<ez_range[1]) ez_range[1]=ez_t[timestep];
+      }
+
+      printf("ez_max(*1.1)=%.20f\n",ez_range[0]*1.1);
+      printf("ez_min(*1.1)=%.20f\n",ez_range[1]*1.1);
+
+      ez_range[0]*=1.1;
+      ez_range[1]*=1.1;
+
+      set1DDoubleCSV_Column(ez_range,"./csv_files/ez_range.csv",2);
 
       // ez_tを2のべき乗だけ後ろの方を切り取る
       double *ez_for_fft=checkAlloc1DDouble("in quad ez fft.",fft_length);
