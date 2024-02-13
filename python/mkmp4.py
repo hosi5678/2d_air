@@ -11,17 +11,10 @@ from shell_command import shell_command
 # csv filesのフォルダパス
 csv_dir="./ez_timestep_csvs/"
 
-# outputするフォルダパス
-png_dir="./pngs/"
-
-output_dir="./mp4/"
-output_file="./mp4/output.mp4"
-
 # csvのファイル数の取得
 timestep = count_csv_files(csv_dir)
 
-# 最大値、最小値の取得
-
+# 出力するフレーム数の入力
 timestep = int(input("input timestep number.(>0)"))
 
 for i in range(timestep):
@@ -43,13 +36,13 @@ for i in range(timestep):
     # 折れ線グラフは縦方向に転置し、heatmapは横方向に読み込む
 
     # figure(全体図)のサイズをfull hdに設定
-    fig=plt.figure(figsize=(1920/80,1080/80),dpi=80)
+    fig=plt.figure(figsize=(1300/80,1080/80),dpi=80)
 
     fig.suptitle('Heatmap of Ez',fontsize=20)
 
     
     # heatmapにもx軸を設定する。間隔はxticklabels=5で設定する。
-    heatmap=sns.heatmap(df, xticklabels=5, yticklabels=5,cmap='coolwarm',cbar=False,center=0.0)
+    heatmap=sns.heatmap(df, xticklabels=5, yticklabels=5,cmap='coolwarm',cbar=True,center=0.0)
     heatmap.invert_yaxis()
 
     heatmap.set_xlabel('x position' , {"fontsize":15})
@@ -62,10 +55,10 @@ for i in range(timestep):
     # plt.tight_layout()
 
     # ファイルを保存
-    plt.savefig(png_dir+"png_"+fmt_i+".png")
+    plt.savefig("./pngs/png_"+fmt_i+".png")
     
     # saveの表示
-    print(png_dir+"png_"+fmt_i+".png"+"/"+str(timestep)+" was created.")
+    print("./pngs/png_"+fmt_i+".png"+"/"+str(timestep)+" was created.")
     
     # csv fileの削除
     os.unlink(csv_file)
@@ -84,12 +77,14 @@ shell_command(command)
 
 command="ffmpeg -r 10 -i ./pngs/png_%06d.png -c:v libx264 -pix_fmt yuv420p ./mp4/output.mp4"
 shell_command(command)    
-    
-command="rm -rf ./pngs/*.png"
-shell_command(command)
 
 command="vlc ./mp4/output.mp4"
 shell_command(command)
 
+command="rm -rf ./pngs/*.png"
+shell_command(command)
+
 command="rm -rf ./ey_timestep_csvs/*.csv"
 shell_command(command)
+
+command="rm -rf ./ez_graph_csvs/*.csv"
