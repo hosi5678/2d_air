@@ -1,6 +1,8 @@
 # these are ignored.
 ./csv_files/
-./ey_timestep_csvs/
+./ez_timestep_csvs/
+./hx_timestep_csvs/
+./hy_timestep_csvs/
 ./build/
 ./graph/
 ./memos/
@@ -22,5 +24,7 @@
 *.d
 *.o
 *.a
+*.ninja_deps
+*.ninja_log
 
 !CMakeLists.txt
