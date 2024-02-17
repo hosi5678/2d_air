@@ -11,14 +11,13 @@
 #include "./common_files/include/checkAlloc1DDouble.h"
 #include "./common_files/include/checkAlloc1DInt.h"
 #include "./common_files/include/getFilePath.h"
-#include "./common_files/include/setGaussianWave.h"
+#include "./fdtd2d_gaussian/include/setGaussianWave.h"
 // #include "./common_files/include/setEtyCSV.h"
 #include "./common_files/include/set1DDoubleCSV_Column.h"
 #include "./common_files/include/fft.h"
 #include "./common_files/include/dft.h"
 #include "./common_files/include/getPeak.h"
 #include "./common_files/include/frequency_analysis.h"
-
 #include "./common_files/include/fdtd2D_calc_main.h"
 
 #include "./fdtd2d_gaussian/include/memo_gaussian.h"
@@ -33,9 +32,8 @@ int main() {
 
     double *exciteWave;
 
-    // char *file_name;
-
     int x_length,y_length;
+
     y_length=1+2*(refractive_layer_half_side_y+air_layer_half_side+pml_layer_half_side);
     x_length=1+2*(refractive_layer_half_side_x+air_layer_half_side+pml_layer_half_side);
 
@@ -49,18 +47,18 @@ int main() {
     int fft_timestep_start=2*gaussianPeaktimePosition+excite_point_x;
     int fft_timestep_end=fft_timestep_start+fft_length;
 
-    int calculation_timestep=fft_timestep_end;
+    int timestep=fft_timestep_end;
     
     printf("(main) y_length=%d\n",y_length);
     printf("(main) x_length=%d\n",x_length);
 
-    printf("(main) calc timestep=%d\n",calculation_timestep);
+    printf("(main) timestep=%d\n",timestep);
     printf("(main) gaussian peak=%d\n",gaussianPeaktimePosition);
     printf("(main) excite point_x=%d\n",excite_point_x);
     printf("(main) excite point_y=%d\n",excite_point_y);
 
     // gaussian wave setting
-    exciteWave=setGaussianWave(calculation_timestep);
+    exciteWave=setGaussianWave(timestep);
 
     double ez_excitePoint_max=0.0;
     double ez_excitePoint_min=0.0;
@@ -69,25 +67,31 @@ int main() {
     ez_range[1]=ez_excitePoint_min;
 
     const double *wave_for_fft;
-
     // 2 dimensional fdtd calculation
     wave_for_fft=fdtd2D_calc_main(
        x_length,
        y_length,
-       calculation_timestep,
+       timestep,
        exciteWave,
        excite_point_x,
        excite_point_y,
        ez_range
     );
 
+    // ez_tを2のべき乗だけ後ろの方を切り取る
+      double *ez_for_fft=checkAlloc1DDouble("in main ez fft.",fft_length);
+
+      for(int time=timestep-fft_length;time<timestep;time++){
+         ez_for_fft[time-timestep+fft_length]=wave_for_fft[time];
+      }
+
+      set1DDoubleCSV_Column(ez_for_fft,"./csv_files/ez_before_fft_time.csv",fft_length);
+
     char *file_name=getFilePath(csv_dir,"after_fft_ez_freq",csv_extension);
 
     const double *fft_wave=frequency_analysis(wave_for_fft,file_name,fft_length);
 
     file_name=getFilePath(csv_dir,"getPeak_of_fft",csv_extension);
-
-    // const int *peak;
 
     const int *peak=getPeak(fft_wave,file_name,fft_length);
 
@@ -100,7 +104,7 @@ int main() {
         &ez_excitePoint_min,
         y_length,
         x_length,
-        calculation_timestep
+        timestep
     );
 
     free(exciteWave);

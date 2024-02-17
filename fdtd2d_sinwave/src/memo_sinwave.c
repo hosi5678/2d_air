@@ -13,7 +13,10 @@
 #include "../../common_files/include/get_dt.h"
 #include "../include/memo_sinwave.h"
 
-void memo_sinwave(int angular_frequency_num,int x_cells){
+void memo_sinwave(
+    int angular_frequency_num,
+    int y_cells,
+    int x_cells){
 
    int now_time_len,file_name_len;
    int fd,option,pmode;
@@ -61,7 +64,8 @@ void memo_sinwave(int angular_frequency_num,int x_cells){
             // write here
             fprintf(fp,"date:%s\n",now_time);
             fprintf(fp,"sin wave\n");
-            fprintf(fp,"cells=%d\n",x_cells);
+            fprintf(fp,"y_cells=%d\n",y_cells);
+            fprintf(fp,"x_cells=%d\n",x_cells);
             fprintf(fp,"time margin=%f\n",time_margin);
 
             fprintf(fp,"timestep=%d\n",2*gaussianPeaktimePosition+x_cells+fft_length);

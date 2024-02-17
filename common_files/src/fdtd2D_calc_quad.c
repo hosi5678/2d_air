@@ -172,9 +172,6 @@ const double *fdtd2D_calc_quad(
 
       }
 
-      // double ez_max=0.0;
-      // double ez_min=0.0;
-
       for(int timestep=0;timestep<600;timestep++) {
          if(ez_t[timestep]>ez_range[0]) ez_range[0]=ez_t[timestep];
          if(ez_t[timestep]<ez_range[1]) ez_range[1]=ez_t[timestep];
@@ -188,15 +185,6 @@ const double *fdtd2D_calc_quad(
 
       set1DDoubleCSV_Column(ez_range,"./csv_files/ez_range.csv",2);
 
-      // ez_tを2のべき乗だけ後ろの方を切り取る
-      double *ez_for_fft=checkAlloc1DDouble("in quad ez fft.",fft_length);
-
-      for(int time=timestep-fft_length;time<timestep;time++){
-         ez_for_fft[time-timestep+fft_length]=ez_t[time];
-      }
-
-      set1DDoubleCSV_Column(ez_for_fft,"./csv_files/ez_before_fft.csv",fft_length);
-
-      return (const double *)ez_for_fft;
+      return (const double *)ez_t;
 
 }

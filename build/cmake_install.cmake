@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/user/project/2d_air/build/fdtd2d_gaussian/cmake_install.cmake")
+  include("/home/user/project/2d_air/build/fdtd2d_sinwave/cmake_install.cmake")
   include("/home/user/project/2d_air/build/common_files/cmake_install.cmake")
 
 endif()

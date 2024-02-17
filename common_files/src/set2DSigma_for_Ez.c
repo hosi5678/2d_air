@@ -24,7 +24,12 @@ const double **set2DSigma_for_Ez(
     int center_y=(y_length-1)/2;
     int center_x=(x_length-1)/2;
 
+
+
     double *sigma=checkAlloc1DDouble("sigma_point",pml_layer_half_side+1);
+
+        printf("test\n");
+
 
     for (int sigma_point=0;sigma_point<=pml_layer_half_side;sigma_point++){
         sigma[sigma_point]=pml_sigma*pow((1.0-(double)sigma_point/(pml_layer_half_side+1)),4.0);
@@ -61,6 +66,7 @@ const double **set2DSigma_for_Ez(
     }
 
     set2DDoubleCSV((const double **)sigma_plane,"sigma_for_ez",y_length,x_length);
+
 
     free(sigma);
 

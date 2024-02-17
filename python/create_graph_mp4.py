@@ -1,3 +1,4 @@
+# 1つのグラフの動画を求めるpythonプログラム
 import os
 import numpy as np
 import pandas as pd
@@ -78,10 +79,6 @@ for i in range(timestep):
     plt.ylim(top=ez_max)
     plt.ylim(bottom=ez_min)
 
-
-    plt.plot(df_ez.T)
-
-    
     # 折れ線グラフのプロット
     plt.plot(df_ez.T,color="blue")
     

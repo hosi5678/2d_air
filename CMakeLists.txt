@@ -15,24 +15,24 @@ set(CMAKE_BUILD_TYPE "Debug")
 set(CMAKE_C_FLAGS_DEBUG "-g")
 
 # 変数 excitation_mode を設定
-set(excitation_mode "gaussian" CACHE STRING "Excitation mode: gaussian or sin")
+set(excitation_mode "sin" CACHE STRING "Excitation mode: gaussian or sin")
 # set(excitation_mode "sin" CACHE STRING "Excitation mode: gaussian or sin")
 
 # angular Frequency Number を設定
-set(angular_frequency_num "175" CACHE INTERNAL "angular frequency number")
+set(angular_frequency_num "566" CACHE INTERNAL "angular frequency number")
 
 # excitation_mode に応じてサブディレクトリと実行ファイルを追加
 # gaussianの場合
 if(excitation_mode STREQUAL "gaussian")
     add_subdirectory(./fdtd2d_gaussian)
     add_executable(main main_2d_gaussian.c)
-    target_link_libraries(main fdtd1d_lib_gaussian)
+    target_link_libraries(main fdtd2d_lib_gaussian)
 
 #sinの場合
 elseif(excitation_mode STREQUAL "sin")
-    add_subdirectory(./fdtd2d_sinwave)
     add_executable(main main_2d_sinwave.c )
-    target_link_libraries(main fdtd1d_lib_sinwave)
+    add_subdirectory(./fdtd2d_sinwave)
+    target_link_libraries(main fdtd2d_lib_sinwave)
 
 # errorを出力
 else()

@@ -187,7 +187,7 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Excitation mode: gaussian or sin
-excitation_mode:STRING=gaussian
+excitation_mode:STRING=sin
 
 //Value Computed by CMake
 fdtd1d_common_lib_BINARY_DIR:STATIC=/home/user/project/2d_air/build/common_files
@@ -202,18 +202,6 @@ fdtd1d_common_lib_LIB_DEPENDS:STATIC=general;m;
 fdtd1d_common_lib_SOURCE_DIR:STATIC=/home/user/project/2d_air/common_files
 
 //Value Computed by CMake
-fdtd1d_lib_gaussian_BINARY_DIR:STATIC=/home/user/project/2d_air/build/fdtd2d_gaussian
-
-//Value Computed by CMake
-fdtd1d_lib_gaussian_IS_TOP_LEVEL:STATIC=OFF
-
-//Dependencies for the target
-fdtd1d_lib_gaussian_LIB_DEPENDS:STATIC=general;m;
-
-//Value Computed by CMake
-fdtd1d_lib_gaussian_SOURCE_DIR:STATIC=/home/user/project/2d_air/fdtd2d_gaussian
-
-//Value Computed by CMake
 fdtd1d_main_BINARY_DIR:STATIC=/home/user/project/2d_air/build
 
 //Value Computed by CMake
@@ -221,6 +209,18 @@ fdtd1d_main_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 fdtd1d_main_SOURCE_DIR:STATIC=/home/user/project/2d_air
+
+//Value Computed by CMake
+fdtd2d_lib_sinwave_BINARY_DIR:STATIC=/home/user/project/2d_air/build/fdtd2d_sinwave
+
+//Value Computed by CMake
+fdtd2d_lib_sinwave_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+fdtd2d_lib_sinwave_LIB_DEPENDS:STATIC=general;m;
+
+//Value Computed by CMake
+fdtd2d_lib_sinwave_SOURCE_DIR:STATIC=/home/user/project/2d_air/fdtd2d_sinwave
 
 
 ########################
@@ -357,5 +357,5 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //angular frequency number
-angular_frequency_num:INTERNAL=175
+angular_frequency_num:INTERNAL=566
 
