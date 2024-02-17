@@ -24,7 +24,8 @@
 *.d
 *.o
 *.a
-*.ninja_deps
-*.ninja_log
+.ninja_deps
+.ninja_log
+main
 
 !CMakeLists.txt

@@ -51,9 +51,6 @@ for i in range(timestep):
     
     plt.suptitle("timestep="+str(i),fontsize=25)
     
-
-    # plt.tight_layout()
-
     # ファイルを保存
     plt.savefig("./pngs/png_"+fmt_i+".png")
     
@@ -88,3 +85,4 @@ command="rm -rf ./ey_timestep_csvs/*.csv"
 shell_command(command)
 
 command="rm -rf ./ez_graph_csvs/*.csv"
+shell_command(command)
