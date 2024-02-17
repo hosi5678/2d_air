@@ -18,6 +18,7 @@ void memo_gaussian(
     const int *peak,
     double *ey_max,
     double *ey_min,
+    int y_length,
     int x_length,
     int time_length){
 
@@ -71,6 +72,7 @@ void memo_gaussian(
 
             fprintf(fp,"df(Nsample/(2*x_length))=%d\n",(int)round(fft_length/(2.0*x_length)));
 
+            fprintf(fp,"y_length=%d\n",y_length);
             fprintf(fp,"x_length=%d\n",x_length);
 
             fprintf(fp,"time margin=%f\n",time_margin);

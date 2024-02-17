@@ -5,6 +5,7 @@ void memo_gaussian(
    const int *peak,
    double *ey_max,
    double *ey_min,
+   int y_length,
    int x_length,
    int time_length
  );

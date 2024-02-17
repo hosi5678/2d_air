@@ -14,11 +14,6 @@
 
 #include "../include/setSigma_dx.h"
 #include "../include/setSigma_half_dx.h"
-// #include "../include/setCoef1.h"
-// #include "../include/setCoef2.h"
-// #include "../include/setCoef3.h"
-// #include "../include/setCoef4.h"
-// #include "../include/setCoef5.h"
 #include "../include/getFilePath.h"
 #include "../include/set1DDoubleCSV_Column.h"
 #include "../include/set2DRefractiveIndex.h"

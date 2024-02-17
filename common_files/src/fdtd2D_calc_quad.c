@@ -195,7 +195,7 @@ const double *fdtd2D_calc_quad(
          ez_for_fft[time-timestep+fft_length]=ez_t[time];
       }
 
-      set1DDoubleCSV_Column(ez_for_fft,"./csv_files/ez_excite_point.csv",fft_length);
+      set1DDoubleCSV_Column(ez_for_fft,"./csv_files/ez_before_fft.csv",fft_length);
 
       return (const double *)ez_for_fft;
 

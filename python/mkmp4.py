@@ -22,15 +22,11 @@ for i in range(timestep):
     # 6桁固定のiを作り出す
     fmt_i = '{:06d}'.format(i)
     csv_file=csv_dir+"ez_timestep_"+fmt_i+".csv"
-    
-    # print(csv_file)
-    
+
     # data frameに読み込む
     df=pd.read_csv(csv_file)
-    
-    # x軸のデータ（1行目）
 
-    # データ部分（2行目以降）
+    # x軸のデータ（1行目）
 
     # DataFrameを転置する（行と列を入れ替える）
     # 折れ線グラフは縦方向に転置し、heatmapは横方向に読み込む

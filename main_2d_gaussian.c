@@ -68,11 +68,10 @@ int main() {
     ez_range[0]=ez_excitePoint_max;
     ez_range[1]=ez_excitePoint_min;
 
-    const double *vec;
+    const double *wave_for_fft;
 
-    // 1 dimensional fdtd calculation
-    // ety_const_2d_plane=
-    vec=fdtd2D_calc_main(
+    // 2 dimensional fdtd calculation
+    wave_for_fft=fdtd2D_calc_main(
        x_length,
        y_length,
        calculation_timestep,
@@ -82,51 +81,29 @@ int main() {
        ez_range
     );
 
-    // file_name=getFilePath(csv_dir,"eyt_plane_2d",csv_extension);
+    char *file_name=getFilePath(csv_dir,"after_fft_ez_freq",csv_extension);
 
-    // setEtyCSV(ety_const_2d_plane,file_name,fft_timestep_end,x_cells);
+    const double *fft_wave=frequency_analysis(wave_for_fft,file_name,fft_length);
 
-    // set_ey_timestep_csv(ety_const_2d_plane,"./ey_timestep_csvs/",calculation_timestep,x_cells);
-
-    // // fft calculation , array allocation
-    // double *fft_array=checkAlloc1DDouble("in main fft alloc",fft_length);
-
-    // // data copy
-    // for(int time=fft_timestep_start;time<fft_timestep_start+fft_length;time++){
-
-    //     for(int x=0;x<x_cells;x++){
-    //         if(x==excite_point){
-    //             fft_array[time-fft_timestep_start]=ety_const_2d_plane[time][x];
-    //         }
-
-    //     }
-    // }
-
-    // // fft_processing
-    // // file name setting
-    // file_name=getFilePath(csv_dir,"before_fft_eyt_time",csv_extension);
-
-    // // set csv value
-    // set1DDoubleCSV_Column(fft_array,file_name,fft_length);
-
-    // file_name=getFilePath(csv_dir,"after_fft_eyt_freq",csv_extension);
-
-    // const double *fft_wave=frequency_analysis(fft_array,file_name,fft_length);
-
-    // file_name=getFilePath(csv_dir,"getPeak_of_fft",csv_extension);
+    file_name=getFilePath(csv_dir,"getPeak_of_fft",csv_extension);
 
     // const int *peak;
 
-    // peak=getPeak(fft_wave,file_name,fft_length);
+    const int *peak=getPeak(fft_wave,file_name,fft_length);
 
-    // printf("(main) gaussian fft peak df=%d\n",(int)round(fft_length/(2.0*x_cells)));
+    ez_excitePoint_max=ez_range[0];
+    ez_excitePoint_min=ez_range[1];
 
-    // memo_gaussian(peak,&ey_max,&ey_min,x_cells,calculation_timestep);
+    memo_gaussian(
+        peak,
+        &ez_excitePoint_max,
+        &ez_excitePoint_min,
+        y_length,
+        x_length,
+        calculation_timestep
+    );
 
     free(exciteWave);
-    // free(vec);
-    // free(fft_array);
-    // free(file_name);
 
     end_clock = clock();
 

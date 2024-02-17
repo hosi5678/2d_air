@@ -65,8 +65,6 @@ const double **fdtd2D_calc_full(
          set_timestep_csv("./hx_timestep_csvs/","hx_timestep_",hx,time,y_length-1,x_length);
          set_timestep_csv("./hy_timestep_csvs/","hy_timestep_",hy,time,y_length,x_length-1);
 
-
       }
-
 
 }
