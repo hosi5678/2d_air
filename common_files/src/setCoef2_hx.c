@@ -8,10 +8,10 @@
 
 #include "../include/setCoef2_hx.h"
 
-const double **setCoef2_hx(
-    const char *file_name,
-    const double **eps,
-    const double **sigma,
+double **setCoef2_hx(
+    char *file_name,
+    double **eps,
+    double **sigma,
     int y_length,
     int x_length
 ) {
@@ -51,5 +51,5 @@ const double **setCoef2_hx(
    set2DDoubleCSV((const double **)coef,file_name,y_length,x_length);
 
 
-    return (const double **)coef;
+    return coef;
 }

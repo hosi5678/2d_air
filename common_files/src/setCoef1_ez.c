@@ -8,10 +8,10 @@
 
 #include "../include/setCoef1_ez.h"
 
-const double **setCoef1_ez(
-    const char *file_name,
-    const double **eps,
-    const double **sigma,
+double **setCoef1_ez(
+    char *file_name,
+    double **eps,
+    double **sigma,
     int y_length,
     int x_length
 ) {
@@ -41,5 +41,5 @@ const double **setCoef1_ez(
 
    set2DDoubleCSV((const double **)coef,file_name,y_length,x_length);
 
-    return (const double **)coef;
+    return coef;
 }

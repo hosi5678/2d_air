@@ -1,10 +1,10 @@
 #ifndef B6BEA2CD_700F_49DD_9282_6ABF38EE9567
 #define B6BEA2CD_700F_49DD_9282_6ABF38EE9567
 
-const double **setCoef2_hx(
-   const char *file_name,
-   const double **eps,
-   const double **sigma,
+double **setCoef2_hx(
+   char *file_name,
+   double **eps,
+   double **sigma,
    int y_length,
    int x_length
 );

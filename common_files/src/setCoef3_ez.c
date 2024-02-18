@@ -9,10 +9,10 @@
 
 #include "../include/setCoef3_ez.h"
 
-const double setCoef3_ez(
-    const char *file_name,
-    const double **eps,
-    const double **sigma,
+double setCoef3_ez(
+    char *file_name,
+    double **eps,
+    double **sigma,
     int excite_point_y,
     int excite_point_x
 ) {

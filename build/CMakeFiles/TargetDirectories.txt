@@ -3,9 +3,9 @@
 /home/user/project/2d_air/build/CMakeFiles/run.dir
 /home/user/project/2d_air/build/CMakeFiles/edit_cache.dir
 /home/user/project/2d_air/build/CMakeFiles/rebuild_cache.dir
-/home/user/project/2d_air/build/fdtd2d_sinwave/CMakeFiles/fdtd2d_lib_sinwave.dir
-/home/user/project/2d_air/build/fdtd2d_sinwave/CMakeFiles/edit_cache.dir
-/home/user/project/2d_air/build/fdtd2d_sinwave/CMakeFiles/rebuild_cache.dir
+/home/user/project/2d_air/build/fdtd2d_gaussian/CMakeFiles/fdtd2d_lib_gaussian.dir
+/home/user/project/2d_air/build/fdtd2d_gaussian/CMakeFiles/edit_cache.dir
+/home/user/project/2d_air/build/fdtd2d_gaussian/CMakeFiles/rebuild_cache.dir
 /home/user/project/2d_air/build/common_files/CMakeFiles/fdtd1d_common_lib.dir
 /home/user/project/2d_air/build/common_files/CMakeFiles/edit_cache.dir
 /home/user/project/2d_air/build/common_files/CMakeFiles/rebuild_cache.dir

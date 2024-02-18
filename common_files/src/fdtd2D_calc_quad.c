@@ -8,7 +8,7 @@
 
 #include "../include/fdtd2D_calc_quad.h"
 
-const double *fdtd2D_calc_quad(
+    double *fdtd2D_calc_quad(
         int timestep,
 
         int y_length,
@@ -17,17 +17,17 @@ const double *fdtd2D_calc_quad(
         int excite_point_y,
         int excite_point_x,
 
-        const double **coef1_ez,
-        const double **coef2_ez,
-        const double   coef3_ez,
-        const double **coef1_hx,
-        const double **coef2_hx,
-        const double **coef1_hy,
-        const double **coef2_hy,
+        double **coef1_ez,
+        double **coef2_ez,
+        double   coef3_ez,
+        double **coef1_hx,
+        double **coef2_hx,
+        double **coef1_hy,
+        double **coef2_hy,
         double **ez,
         double **hx,
         double **hy,
-        const double *src_J,
+        double *src_J,
         double *ez_range // [0]:max,[1] :min
     ) {
 
@@ -185,6 +185,6 @@ const double *fdtd2D_calc_quad(
 
       set1DDoubleCSV_Column(ez_range,"./csv_files/ez_range.csv",2);
 
-      return (const double *)ez_t;
+      return ez_t;
 
 }

@@ -15,7 +15,7 @@
 
 #include "../include/set2DSigma_for_Ez.h"
 
-const double **set2DSigma_for_Ez(
+double **set2DSigma_for_Ez(
    int y_length,
    int x_length,
    double pml_sigma
@@ -23,8 +23,6 @@ const double **set2DSigma_for_Ez(
 
     int center_y=(y_length-1)/2;
     int center_x=(x_length-1)/2;
-
-
 
     double *sigma=checkAlloc1DDouble("sigma_point",pml_layer_half_side+1);
 
@@ -70,6 +68,6 @@ const double **set2DSigma_for_Ez(
 
     free(sigma);
 
-    return (const double **)sigma_plane;
+    return sigma_plane;
 
 }

@@ -23,10 +23,12 @@ double *setSinWave(int angular_frequency_num,int length){
 
 	printf("time_length=%d\n",length);
 
+	// length とfft_lengthが合致していないとエラーになる。
+
    wave=checkAlloc1DDouble("sinwave set",length);
 
-	for(int time=0;time<fft_length;time++){
-		wave[time]=sin(2.0*pi*time*angular_frequency_num/fft_length);
+	for(int time=0;time<length;time++){
+		wave[time]=sin(2.0*pi*time*angular_frequency_num/length);
 	} 
 
 	printf("sin wave setted.\n");

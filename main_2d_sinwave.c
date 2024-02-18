@@ -55,6 +55,8 @@ int main(int argc,char **argv) {
 
     int calculation_timestep=fft_timestep_end;
 
+    // int calculation_timestep=1200;
+
     // calculation_timestep=1800;
     
     printf("(main) y_length=%d\n",y_length);
@@ -66,7 +68,7 @@ int main(int argc,char **argv) {
     printf("(main) excite point_y=%d\n",excite_point_y);
 
     // gaussian wave setting
-    exciteWave=setSinWave(angular_frequency_num,calculation_timestep);
+    exciteWave=setSinWave(angular_frequency_num,fft_length);
 
     double ez_excitePoint_max=0.0;
     double ez_excitePoint_min=0.0;
@@ -74,7 +76,7 @@ int main(int argc,char **argv) {
     ez_range[0]=ez_excitePoint_max;
     ez_range[1]=ez_excitePoint_min;
 
-    const double *wave_for_fft;
+    double *wave_for_fft;
 
     // 2 dimensional fdtd calculation
     wave_for_fft=fdtd2D_calc_main(
@@ -90,6 +92,7 @@ int main(int argc,char **argv) {
     memo_sinwave(angular_frequency_num,y_length,x_length);
 
     free(exciteWave);
+    free(wave_for_fft);
 
     end_clock = clock();
 

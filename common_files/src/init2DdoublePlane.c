@@ -6,7 +6,7 @@
 
 double **init2DdoublePlane(const char *msg, int y_length , int x_length){
 
-    static double **plane;
+    double **plane;
 
     plane=(double **)calloc(y_length,sizeof(double *));
 

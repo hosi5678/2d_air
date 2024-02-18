@@ -8,7 +8,7 @@
 #include "../include/set2DDoubleCSV.h"
 #include "../include/set2D_plane_eps.h"
 
-const double **set2D_plane_eps(
+double **set2D_plane_eps(
    const char *src_file_name,
    double **n,
    int y_length,
@@ -25,6 +25,6 @@ const double **set2D_plane_eps(
 
    set2DDoubleCSV((const double **)eps,src_file_name,y_length,x_length);
 
-   return (const double **)eps;
+   return eps;
 
 }

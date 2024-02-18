@@ -15,7 +15,7 @@
 
 #include "../include/set2DSigma_for_Hy.h"
 
-const double **set2DSigma_for_Hy(
+double **set2DSigma_for_Hy(
    int y_length,
    int x_length,
    double pml_sigma
@@ -64,6 +64,6 @@ const double **set2DSigma_for_Hy(
 
     free(sigma);
 
-    return (const double **)sigma_plane;
+    return sigma_plane;
 
 }
