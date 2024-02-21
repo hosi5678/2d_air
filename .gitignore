@@ -4,6 +4,7 @@
 ./hx_timestep_csvs/
 ./hy_timestep_csvs/
 ./build/
+build/
 ./graph/
 ./memos/
 ./mp4/
@@ -24,6 +25,7 @@
 *.d
 *.o
 *.a
+*.so
 .ninja_deps
 .ninja_log
 main

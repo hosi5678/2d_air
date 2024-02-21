@@ -12,8 +12,6 @@
 #include "../include/set2DSigma_for_Hx.h"
 #include "../include/set2DSigma_for_Hy.h"
 
-#include "../include/setSigma_dx.h"
-#include "../include/setSigma_half_dx.h"
 #include "../include/getFilePath.h"
 #include "../include/set1DDoubleCSV_Column.h"
 #include "../include/set2DRefractiveIndex.h"

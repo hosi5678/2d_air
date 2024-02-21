@@ -34,7 +34,10 @@ int main() {
 
     int x_length,y_length;
 
+    // y方向の長さを設定する
     y_length=1+2*(refractive_layer_half_side_y+air_layer_half_side+pml_layer_half_side);
+
+    // x方向の長さを設定する
     x_length=1+2*(refractive_layer_half_side_x+air_layer_half_side+pml_layer_half_side);
 
     int excite_point_x,excite_point_y;

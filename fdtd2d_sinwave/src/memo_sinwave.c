@@ -47,7 +47,6 @@ void memo_sinwave(
 
    fd=open(file_name, option, pmode);
 
-
     if(fd == -1){
         perror("can not open the file..");
         exit(1);

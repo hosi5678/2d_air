@@ -5,10 +5,11 @@
 #include "../include/checkAlloc1DDouble.h"
 #include "../include/set1DDoubleCSV_Column.h"
 #include "../include/set1DDoubleTimestepCSVs.h"
+#include "../include/init3DdoubleBox.h"
 
 #include "../include/fdtd2D_calc_quad.h"
 
-    double *fdtd2D_calc_quad(
+   double *fdtd2D_calc_quad(
         int timestep,
 
         int y_length,
@@ -42,6 +43,7 @@
       printf("(in quad) half_x=%d\n",half_x);
 
       double *ez_t=checkAlloc1DDouble("in quad ez",timestep);
+      double ***ez_box=init3DdoubleBox("in fdtd_calc_quad",outputFrameLimit,y_length,x_length);
 
       for ( int time = 0 ; time < timestep ; time++ ) {
 
@@ -146,8 +148,16 @@
          }
 
          // ezの波形を取得する
-
          ez_t[time]=ez[y][x];
+
+         // ezの波形を3次元に代入する
+         if(time<outputFrameLimit){
+            for(int y=0 ; y<y_length ; y++){
+               for (int x=0;x<x_length;x++){
+                    ez_box[time][y][x]=ez[y][x];
+               }
+            }
+         }
 
          // for(int y=0;y<y_length;y++){
          //    for(int x=0;x<x_length-1;x++){
@@ -165,16 +175,21 @@
             x_length
          );
 
-         set_timestep_csv("./ez_timestep_csvs/","ez_timestep_",ez,time,y_length,x_length);
-         set_timestep_csv("./hx_timestep_csvs/","hx_timestep_",hx,time,y_length-1,x_length);
-         set_timestep_csv("./hy_timestep_csvs/","hy_timestep_",hy,time,y_length,x_length-1);
+         // set_timestep_csv("./ez_timestep_csvs/","ez_timestep_",ez,time,y_length,x_length);
+         // set_timestep_csv("./hx_timestep_csvs/","hx_timestep_",hx,time,y_length-1,x_length);
+         // set_timestep_csv("./hy_timestep_csvs/","hy_timestep_",hy,time,y_length,x_length-1);
 
 
-      }
+      } // time-loop
 
-      for(int timestep=0;timestep<600;timestep++) {
-         if(ez_t[timestep]>ez_range[0]) ez_range[0]=ez_t[timestep];
-         if(ez_t[timestep]<ez_range[1]) ez_range[1]=ez_t[timestep];
+      for(int time=0;time<outputFrameLimit;time++) {
+         if(ez_t[time]>ez_range[0]) ez_range[0]=ez_t[time];
+         if(ez_t[time]<ez_range[1]) ez_range[1]=ez_t[time];
+
+         double **ez_plane=ez_box[time];
+
+         set_timestep_csv("./ez_timestep_csvs/","ez_timestep_",ez_plane,time,y_length,x_length);
+
       }
 
       printf("ez_max(*1.1)=%.20f\n",ez_range[0]*1.1);

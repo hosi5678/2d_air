@@ -34,6 +34,8 @@
 #define air_layer_half_side 10
 #define pml_layer_half_side 15
 
+#define outputFrameLimit 1200
+
 // #define reflactive_layer_half_side 60
 // #define air_layer_half_side 60
 // #define pml_layer_half_side 35

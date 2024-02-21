@@ -320,6 +320,14 @@ build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o: C
   TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
   TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
+build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init3DdoubleBox.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/init3DdoubleBox.c || cmake_object_order_depends_target_fdtd1d_common_lib
+  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init3DdoubleBox.c.o.d
+  FLAGS = -g
+  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
+  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
+  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
+  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
+
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/put_square.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o.d
   FLAGS = -g
@@ -464,22 +472,6 @@ build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o: C_COMPILER
   TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
   TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
 
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setSigma_dx.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
-build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/setSigma_half_dx.c || cmake_object_order_depends_target_fdtd1d_common_lib
-  DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o.d
-  FLAGS = -g
-  OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
-  OBJECT_FILE_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir/src
-  TARGET_COMPILE_PDB = common_files/CMakeFiles/fdtd1d_common_lib.dir/fdtd1d_common_lib.pdb
-  TARGET_PDB = common_files/libfdtd1d_common_lib.pdb
-
 build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o: C_COMPILER__fdtd1d_common_lib_unscanned_Debug /home/user/project/2d_air/common_files/src/set_timestep_csv.c || cmake_object_order_depends_target_fdtd1d_common_lib
   DEP_FILE = common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o.d
   FLAGS = -g
@@ -512,7 +504,7 @@ build common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o: C_COM
 #############################################
 # Link the static library common_files/libfdtd1d_common_lib.a
 
-build common_files/libfdtd1d_common_lib.a: C_STATIC_LIBRARY_LINKER__fdtd1d_common_lib_Debug common_files/CMakeFiles/fdtd1d_common_lib.dir/src/antisymmetryCheck.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checAlloc1DInt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checkAlloc1DDouble.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/check_2_n_power.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/dft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_full.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_main.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_quad.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/frequency_analysis.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getFilePath.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getPeak.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/get_dt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Row.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleTimestepCSVs.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DIntCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleValue.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DRefractiveIndex.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hy.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2D_plane_eps.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setEtyCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_dx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma_half_dx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/swap.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o
+build common_files/libfdtd1d_common_lib.a: C_STATIC_LIBRARY_LINKER__fdtd1d_common_lib_Debug common_files/CMakeFiles/fdtd1d_common_lib.dir/src/antisymmetryCheck.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checAlloc1DInt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/checkAlloc1DDouble.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/check_2_n_power.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/dft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_full.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_main.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fdtd2D_calc_quad.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/fft.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/frequency_analysis.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getFilePath.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/getPeak.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/get_dt.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init2DdoublePlane.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/init3DdoubleBox.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/put_square.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleCSV_Row.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DDoubleTimestepCSVs.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set1DIntCSV_Column.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DDoubleValue.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DRefractiveIndex.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2DSigma_for_Hy.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set2D_plane_eps.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef1_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef2_hx.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setCoef3_ez.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setEtyCSV.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/setSigma.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/set_timestep_csv.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/swap.c.o common_files/CMakeFiles/fdtd1d_common_lib.dir/src/symmetryCheck.c.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = common_files/CMakeFiles/fdtd1d_common_lib.dir
   POST_BUILD = :
