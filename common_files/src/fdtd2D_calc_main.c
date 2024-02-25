@@ -82,9 +82,9 @@ double *fdtd2D_calc_main(
         refractive_index
     );
 
-    eps_ez=set2D_plane_eps("(in calc main) ez_eps",n_plane_for_ez,y_length,x_length);
-    eps_hx=set2D_plane_eps("(in calc main) hx_eps",n_plane_for_hx,y_length-1,x_length);
-    eps_hy=set2D_plane_eps("(in calc main) hy_eps",n_plane_for_hy,y_length,x_length-1);
+    eps_ez=set2D_plane_eps("ez_eps",n_plane_for_ez,y_length,x_length);
+    eps_hx=set2D_plane_eps("hx_eps",n_plane_for_hx,y_length-1,x_length);
+    eps_hy=set2D_plane_eps("hy_eps",n_plane_for_hy,y_length,x_length-1);
 
     free(n_plane_for_ez);
     free(n_plane_for_hx);
@@ -94,9 +94,9 @@ double *fdtd2D_calc_main(
     double **coef2_ez;
     double coef3_ez;
 
-    coef1_ez=setCoef1_ez("(in calc main) coef1_ez",eps_ez,sigma_ez,y_length,x_length);
-    coef2_ez=setCoef2_ez("(in calc main) coef2_ez",eps_ez,sigma_ez,y_length,x_length);
-    coef3_ez=setCoef3_ez("(in calc main) coef3_ez",eps_ez,sigma_ez,excite_point_y,excite_point_x);
+    coef1_ez=setCoef1_ez("coef1_ez",eps_ez,sigma_ez,y_length,x_length);
+    coef2_ez=setCoef2_ez("coef2_ez",eps_ez,sigma_ez,y_length,x_length);
+    coef3_ez=setCoef3_ez("coef3_ez",eps_ez,sigma_ez,excite_point_y,excite_point_x);
    
     free(sigma_ez);
     free(eps_ez);
@@ -104,8 +104,8 @@ double *fdtd2D_calc_main(
     double **coef1_hx;
     double **coef2_hx;
 
-    coef1_hx=setCoef1_ez("(in calc main) coef1_hx",eps_hx,sigma_hx,y_length-1,x_length);
-    coef2_hx=setCoef2_hx("(in calc main) coef2_hx",eps_hx,sigma_hx,y_length-1,x_length);
+    coef1_hx=setCoef1_ez("coef1_hx",eps_hx,sigma_hx,y_length-1,x_length);
+    coef2_hx=setCoef2_hx("coef2_hx",eps_hx,sigma_hx,y_length-1,x_length);
 
     free(eps_hx);
     free(sigma_hx);
@@ -113,8 +113,8 @@ double *fdtd2D_calc_main(
     double **coef1_hy;
     double **coef2_hy;
 
-    coef1_hy=setCoef1_ez("(in calc main) coef1_hy",eps_hy,sigma_hy,y_length,x_length-1);
-    coef2_hy=setCoef2_hx("(in calc main) coef2_hy",eps_hy,sigma_hy,y_length,x_length-1);
+    coef1_hy=setCoef1_ez("coef1_hy",eps_hy,sigma_hy,y_length,x_length-1);
+    coef2_hy=setCoef2_hx("coef2_hy",eps_hy,sigma_hy,y_length,x_length-1);
 
     free(eps_hy);
     free(sigma_hy);

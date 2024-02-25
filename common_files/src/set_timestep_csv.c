@@ -66,7 +66,7 @@ void set_timestep_csv(
             // write here
 
             // x axisの書き込み
-            // tabの書き込み
+            // tab、カンマは書き込まない。
             // fprintf(fp,",");
 
             for(int x=0;x<x_length;x++){
@@ -86,9 +86,9 @@ void set_timestep_csv(
                 // dataの書き込み
                 for (int x= 0 ; x < x_length ; x++){
                     if(x==x_length-1){
-                        fprintf(fp, "%.20f\n", plane[y][x]);
+                        fprintf(fp, "%.15f\n", plane[y][x]);
                     }else{
-                        fprintf(fp, "%.20f,", plane[y][x]);
+                        fprintf(fp, "%.15f,", plane[y][x]);
                     }
                 } // x-loop
 

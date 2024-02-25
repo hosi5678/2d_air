@@ -182,9 +182,13 @@
 
       } // time-loop
 
-      for(int time=0;time<outputFrameLimit;time++) {
+      for(int time=2*gaussianPeaktimePosition;time<outputFrameLimit;time++){
          if(ez_t[time]>ez_range[0]) ez_range[0]=ez_t[time];
          if(ez_t[time]<ez_range[1]) ez_range[1]=ez_t[time];
+
+      }
+
+      for(int time=0;time<outputFrameLimit;time++) {
 
          double **ez_plane=ez_box[time];
 
